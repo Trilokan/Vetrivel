@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+
+        <!-- Stock : stock.adjustment -->
+        <record id="stock_adjustment_sequence" model="ir.sequence">
+            <field name="name">Stock Adjustment</field>
+            <field name="code">stock.adjustment</field>
+            <field name="prefix">ADJ</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Stock : stock.adjustment.detail -->
+        <record id="stock_adjustment_detail_sequence" model="ir.sequence">
+            <field name="name">Stock Adjustment Detail</field>
+            <field name="code">stock.adjustment.detail</field>
+            <field name="prefix">ADJD</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Stock : store.request -->
+        <record id="store_request_sequence" model="ir.sequence">
+            <field name="name">Store Request</field>
+            <field name="code">store.request</field>
+            <field name="prefix">SR</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Stock : store.request.detail -->
+        <record id="store_request_detail_sequence" model="ir.sequence">
+            <field name="name">Store Request Detail</field>
+            <field name="code">store.request.detail</field>
+            <field name="prefix">SRD</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Stock : store.issue -->
+        <record id="store_issue_sequence" model="ir.sequence">
+            <field name="name">Store Issue</field>
+            <field name="code">store.issue</field>
+            <field name="prefix">Si</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Stock : store.issue -->
+        <record id="store_issue_sequence" model="ir.sequence">
+            <field name="name">Store Issue</field>
+            <field name="code">store.issue</field>
+            <field name="prefix">Si</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Stock : store.return -->
+        <record id="store_return_sequence" model="ir.sequence">
+            <field name="name">Store Return</field>
+            <field name="code">store.return</field>
+            <field name="prefix">SRN</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Stock : store.return.detail -->
+        <record id="store_return_detail_sequence" model="ir.sequence">
+            <field name="name">Store Return Detail</field>
+            <field name="code">store.return.detail</field>
+            <field name="prefix">SRND</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Stock : store.accept -->
+        <record id="store_accept_sequence" model="ir.sequence">
+            <field name="name">Store Accept</field>
+            <field name="code">store.accept</field>
+            <field name="prefix">SA</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Stock : store.accept -->
+        <record id="store_accept_detail_sequence" model="ir.sequence">
+            <field name="name">Store Accept Detail</field>
+            <field name="code">store.accept.detail</field>
+            <field name="prefix">SAD</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Stock : arc.move -->
+        <record id="arc_move_sequence" model="ir.sequence">
+            <field name="name">Arc Move</field>
+            <field name="code">arc.move</field>
+            <field name="prefix">MV</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+    </data>
+
+</odoo>
