@@ -48,7 +48,8 @@ class Product(models.Model):
     def _get_warehouse_ids(self):
         config = self.env["store.config"].search([("company_id", "=", self.env.user.company_id.id)])
         domain = [('location_id.location_left', '>=', config.virtual_left),
-                  ('location_id.location_right', '<=', config.virtual_right)]
+                  ('location_id.location_right', '<=', config.virtual_right),
+                  ('product_id', '=', self.id)]
 
         self.warehouse_ids = self.env["stock.warehouse"].search(domain)
 

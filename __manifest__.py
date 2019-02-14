@@ -26,8 +26,13 @@
 
         # Sequence
         "sequence/person.xml",
+        "sequence/employee.xml",
         "sequence/product.xml",
         "sequence/store.xml",
+        "sequence/purchase.xml",
+
+        # Base
+        "views/base/users.xml",
 
         # Hr
         "views/hr/employee.xml",
@@ -50,20 +55,24 @@
         # Store
         "views/stock/location.xml",
         "views/stock/warehouse.xml",
-        # "views/store/stock_adjustment.xml",
-        # "views/store/store_request.xml",
-        # "views/store/store_issue.xml",
-        # "views/store/store_return.xml",
-        # "views/store/store_accept.xml",
-        # "views/store/arc_move.xml",
+        "views/stock/stock_adjustment.xml",
+        "views/stock/store_request.xml",
+        "views/stock/store_issue.xml",
+        "views/stock/store_return.xml",
+        "views/stock/store_accept.xml",
+        "views/stock/arc_move.xml",
         "views/configuration/store_config.xml",
 
         # Asserts
+
+        # Purchase
+        "views/purchase/indent.xml",
 
         # Menu
         "views/menu/main_menu.xml",
         "views/menu/hr.xml",
         "views/menu/inventory.xml",
+        "views/menu/purchase.xml",
         # "views/menu/asserts.xml",
 
 

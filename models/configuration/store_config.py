@@ -7,6 +7,7 @@ from datetime import datetime
 class StoreConfig(models.Model):
     _name = "store.config"
     _inherit = "mail.thread"
+    _rec_name = "company_id"
 
     store_id = fields.Many2one(comodel_name="stock.location", string="Store Location")
     purchase_id = fields.Many2one(comodel_name="stock.location", string="Purchase Location")

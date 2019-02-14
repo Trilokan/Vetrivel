@@ -12,7 +12,7 @@ class StockWarehouse(models.Model):
 
     def _get_stock(self):
         for record in self:
-            record.quantity = self.env["hos.stock"].get_current_stock(record.product_id.id, record.location_id.id)
+            record.quantity = self.env["arc.stock"].get_current_stock(record.product_id.id, record.location_id.id)
 
     @api.model
     def create(self, vals):

@@ -6,7 +6,7 @@
         <field name="name">product.sub.group.tree</field>
         <field name="model">product.sub.group</field>
         <field name="arch" type="xml">
-            <tree string="Product Sub Group">
+            <tree string="Product Sub Group" create="false" edit="false">
                 <field name="name"/>
                 <field name="sub_group_uid"/>
                 <field name="product_group_id"/>
@@ -19,15 +19,15 @@
         <field name="name">product.sub.group.form</field>
         <field name="model">product.sub.group</field>
         <field name="arch" type="xml">
-            <form string="Product Sub Group">
+            <form string="Product Sub Group" create="false" edit="false">
                 <sheet>
                     <div id="s_header">
                         <h1>Product Sub Group</h1>
                     </div>
                     <group>
-                        <field name="name" readonly="1"/>
-                        <field name="sub_group_uid" readonly="1"/>
-                        <field name="product_group_id" readonly="1"/>
+                        <field name="name"/>
+                        <field name="sub_group_uid"/>
+                        <field name="product_group_id"/>
                     </group>
                 </sheet>
             </form>

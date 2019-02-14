@@ -5,6 +5,7 @@ from odoo import models, fields
 
 class StockLocation(models.Model):
     _name = "stock.location"
+    _rec_name = "location_uid"
 
     name = fields.Char(string="Name", required=True)
     location_uid = fields.Char(string="Code", compute="_get_code")
@@ -17,4 +18,4 @@ class StockLocation(models.Model):
                                                       ("location_right", ">=", record.location_right)])
 
             recs = recs.sorted(key=lambda r: r.location_left)
-            record.code = "/".join(str(x.name) for x in recs)
+            record.location_uid = "/".join(str(x.name) for x in recs)

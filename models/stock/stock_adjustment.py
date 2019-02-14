@@ -53,7 +53,7 @@ class StockAdjustment(models.Model):
                       "unit_price": rec.unit_price,
                       "progress": "moved"}
 
-            self.env["hos.move"].create(result)
+            self.env["arc.move"].create(result)
 
     @api.multi
     def trigger_approve(self):

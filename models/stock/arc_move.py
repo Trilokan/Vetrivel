@@ -30,8 +30,8 @@ class ArcMove(models.Model):
         # Virtual Source
         conf = self.env["store.config"].search([("company_id", "=", self.env.user.company_id.id)])
 
-        left = conf.virtual_left <= self.source_id.location_left <= conf.virtual_right
-        right = conf.virtual_left <= self.source_id.location_right <= conf.virtual_right
+        left = conf.virtual_right >= conf.virtual_left >= self.source_id.location_left
+        right = conf.virtual_right >= conf.virtual_left >= self.source_id.location_right
 
         if left or right:
             return True

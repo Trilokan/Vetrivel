@@ -17,6 +17,6 @@ class ProductTax(models.Model):
     def name_get(self):
         result = []
         for record in self:
-            name = "{0}-{1}%".format(record.tax_uid, record.rate)
+            name = "{0}-{1}%".format(record.name, record.rate)
             result.append((record.id, name))
         return result

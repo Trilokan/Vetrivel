@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="view_journal_item_tree" model="ir.ui.view">
+        <field name="name">journal.item.tree</field>
+        <field name="model">journal.item</field>
+        <field name="arch" type="xml">
+            <tree string="Journal Item">
+                <field name="date"/>
+                <field name="name"/>
+                <field name="person_id"/>
+                <field name="invoice_id"/>
+                <field name="journal_type_id"/>
+                <field name="description"/>
+                <field name="credit"/>
+                <field name="debit"/>
+                <field name="full_reconcile_id"/>
+                <field name="part_reconcile_id"/>
+                <field name="progress"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_journal_item_form" model="ir.ui.view">
+        <field name="name">journal.item.form</field>
+        <field name="model">journal.item</field>
+        <field name="arch" type="xml">
+            <form string="Journal Item">
+                <sheet>
+                    <div id="s_header">
+                        <h1>Journal Item</h1>
+                    </div>
+                    <div id="p_header">
+                        <field name="progress" widget="statusbar" style="float: right;padding: 20px;"/>
+                    </div>
+                    <h2><field name="name"/></h2>
+                    <group>
+                        <field name="date" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
+                        <field name="person_id" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
+                        <field name="invoice_id" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
+                        <field name="journal_type_id" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
+                        <field name="description" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
+                        <field name="credit" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
+                        <field name="debit" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
+                        <field name="full_reconcile_id" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
+                        <field name="part_reconcile_id" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_journal_item" model="ir.actions.act_window">
+        <field name="name">Journal Item</field>
+        <field name="res_model">journal.item</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
