@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+
+        <!-- Person : vendor.type : Supplier -->
+        <record id="vendor_type_supplier_sequence" model="vendor.type">
+            <field name="name">Supplier</field>
+        </record>
+
+        <!-- Person : vendor.type : Service -->
+        <record id="vendor_type_service_sequence" model="vendor.type">
+            <field name="name">Service</field>
+        </record>
+
+    </data>
+
+</odoo>

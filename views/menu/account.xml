@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Account -->
+    <menuitem id="account_account" name="Human Resources" parent="menu_account" sequence="10"/>
+    <menuitem id="account_account_arc_period" name="Period" action="action_arc_period" parent="account_account" sequence="10"/>
+
+</odoo>

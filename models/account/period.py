@@ -11,12 +11,13 @@ CURRENT_TIME_INDIA = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
 class ArcPeriod(models.Model):
     _name = "arc.period"
+    _inherit = "mail.thread"
 
-    name = fields.Char(string="Name", required=True)
+    name = fields.Char(string="Year", required=True)
     start_date = fields.Date(string="Start Date", required=True)
     end_date = fields.Date(string="End Date", required=True)
     progress = fields.Selection(selection=PROGRESS_INFO, default="draft", string="Progress")
-    is_month = fields.Boolean(string="Is Month")
+    is_month = fields.Boolean(string="Is Month", default=True)
     writter = fields.Text(string="Writter", track_visibility="always")
 
     @api.multi
@@ -33,10 +34,14 @@ class ArcPeriod(models.Model):
 
         self.write(data)
 
-    def generate_month_attendance(self):
-        pass
+    def generate_month_attendance(self, rec_id):
+        self.env["month.attendance"].create({"period_id": rec_id.id})
 
     @api.model
     def create(self, vals):
-        self.generate_month_attendance()
-        return super(ArcPeriod, self).create(vals)
+        rec_id = super(ArcPeriod, self).create(vals)
+
+        if vals.get("is_month", False):
+            self.generate_month_attendance(rec_id)
+
+        return rec_id

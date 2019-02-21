@@ -28,11 +28,11 @@
                     <div id="p_header">
                         <field name="progress" widget="statusbar" style="float: right;padding: 20px;"/>
                     </div>
-                    <h2><field name="name"/></h2>
                     <group col="4">
+                        <field name="name" attrs="{'readonly': [('progress', '!=', 'draft')]}"/>
+                        <field name="is_month" attrs="{'readonly': [('progress', '!=', 'draft')]}"/>
                         <field name="start_date" attrs="{'readonly': [('progress', '!=', 'draft')]}"/>
                         <field name="end_date" attrs="{'readonly': [('progress', '!=', 'draft')]}"/>
-                        <field name="is_month" attrs="{'readonly': [('progress', '!=', 'draft')]}"/>
                     </group>
                     <footer>
                         <button name="trigger_open" string="Open Period" type="object"

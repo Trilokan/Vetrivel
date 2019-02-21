@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="view_vendor_type_tree" model="ir.ui.view">
+        <field name="name">vendor.type.tree</field>
+        <field name="model">vendor.type</field>
+        <field name="arch" type="xml">
+            <tree string="Vendor Type">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_vendor_type_form" model="ir.ui.view">
+        <field name="name">vendor.type.form</field>
+        <field name="model">vendor.type</field>
+        <field name="arch" type="xml">
+            <form string="Vendor Type">
+                <sheet>
+                    <div id="s_header">
+                        <h1>Vendor Type</h1>
+                    </div>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_vendor_type" model="ir.actions.act_window">
+        <field name="name">Vendor Type</field>
+        <field name="res_model">vendor.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

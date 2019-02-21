@@ -7,3 +7,4 @@ from . import leave_application
 from . import comp_off
 from . import permission
 from . import on_duty
+from . import leave_availability

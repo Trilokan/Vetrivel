@@ -44,6 +44,11 @@ class ArcPerson(models.Model):
 
     # Filter
     is_employee = fields.Boolean(string="Is Employee")
+    is_patient = fields.Boolean(string="Is Patient")
+    is_vendor = fields.Boolean(string="Is Vendor")
+
+    employee_type = fields.Many2one(comodel_name="employee.type", string="Employee Type")
+    vendor_type = fields.Many2one(comodel_name="vendor.type", string="vendor Type")
 
     @api.model
     def create(self, vals):

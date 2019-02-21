@@ -24,6 +24,10 @@
     "data": [
         "views/assert_backend.xml",
 
+        # Data
+        "data/vendor_type.xml",
+        "data/employee_type.xml",
+
         # Sequence
         "sequence/person.xml",
         "sequence/employee.xml",
@@ -31,11 +35,29 @@
         "sequence/store.xml",
         "sequence/purchase.xml",
 
+        # Account
+        "views/account/period.xml",
+
         # Base
         "views/base/users.xml",
 
+        # Person
+        "views/person/person.xml",
+        "views/person/vendor_type.xml",
+
+        # Contact
+        "views/contact/doctor.xml",
+        "views/contact/nurse.xml",
+        "views/contact/staff.xml",
+        "views/contact/driver.xml",
+        "views/contact/patient.xml",
+        "views/contact/supplier.xml",
+        "views/contact/service.xml",
+        "views/contact/others.xml",
+
         # Hr
         "views/hr/employee.xml",
+        "views/hr/employee_type.xml",
         "views/hr/category.xml",
         "views/hr/department.xml",
         "views/hr/designation.xml",
@@ -43,6 +65,39 @@
         "views/hr/identities.xml",
         "views/hr/address.xml",
         "views/hr/qualification.xml",
+
+        # Time management
+        "views/time/shift.xml",
+        "views/time/week_schedule.xml",
+        "views/time/month_attendance.xml",
+        "views/time/month_attendance_wiz.xml",
+        "views/time/daily_attendance.xml",
+        "views/time/shift_change.xml",
+        "views/time/holiday_change.xml",
+        "views/time/add_employee.xml",
+        "views/time/time_sheet.xml",
+        "views/time/time_sheet_application.xml",
+        "views/time/work_sheet.xml",
+        "views/configuration/time_config.xml",
+
+        # Leave Management
+        "views/leave/leave_application.xml",
+        "views/leave/comp_off.xml",
+        "views/leave/permission.xml",
+        # "views/leave/on_duty.xml",
+        "views/leave/leave_level.xml",
+        "views/leave/leave_type.xml",
+        "views/leave/leave_availability.xml",
+        "views/configuration/leave_config.xml",
+
+        # Payroll
+        "views/payroll/hr_pay_update_wiz.xml",
+        "views/payroll/hr_pay.xml",
+        "views/payroll/payroll_generation.xml",
+        "views/payroll/payslip.xml",
+        "views/payroll/salary_rule.xml",
+        "views/payroll/salary_rule_slab.xml",
+        "views/payroll/salary_structure.xml",
 
         # Product
         "views/product/product.xml",
@@ -70,6 +125,8 @@
 
         # Menu
         "views/menu/main_menu.xml",
+        "views/menu/account.xml",
+        "views/menu/contact.xml",
         "views/menu/hr.xml",
         "views/menu/inventory.xml",
         "views/menu/purchase.xml",
