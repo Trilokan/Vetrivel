@@ -38,6 +38,8 @@
                                     <field name="actual_from_time"/>
                                     <field name="actual_till_time"/>
                                     <field name="actual_hours" widget="float_time"/>
+                                    <field name="permission_hours" widget="float_time"/>
+                                    <field name="on_duty_hours" widget="float_time"/>
                                     <field name="day_progress"/>
                                     <field name="availability_progress"/>
                                     <field name="expected_from_time" invisible="1"/>
@@ -57,6 +59,8 @@
                                             <field name="actual_till_time"/>
                                             <field name="expected_hours" widget="float_time"/>
                                             <field name="actual_hours" widget="float_time"/>
+                                            <field name="permission_hours" widget="float_time"/>
+                                            <field name="on_duty_hours" widget="float_time"/>
                                             <field name="day_progress"/>
                                             <field name="availability_progress"/>
                                             <field name="progress" invisible="1"/>

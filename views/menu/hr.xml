@@ -15,6 +15,7 @@
     <!-- Time Management -->
     <menuitem id="hr_time" name="Time Management" parent="menu_hr" sequence="20"/>
     <menuitem id="hr_time_time_shift" name="Shift" action="action_time_shift" parent="hr_time" sequence="10"/>
+    <menuitem id="hr_time_time_config" name="Configuration" action="action_time_config" parent="hr_time" sequence="15"/>
     <menuitem id="hr_time_week_schedule" name="Week Schedule" action="action_week_schedule" parent="hr_time" sequence="20"/>
     <menuitem id="hr_time_month_attendance" name="Month Attendance" action="action_month_attendance" parent="hr_time" sequence="30"/>
     <menuitem id="hr_time_daily_attendance" name="Daily Attendance" action="action_daily_attendance" parent="hr_time" sequence="40"/>
@@ -30,10 +31,11 @@
     <menuitem id="hr_leave_leave_request" name="Leave Request" action="action_leave_application" parent="hr_leave" sequence="10"/>
     <menuitem id="hr_leave_comp_off_request" name="Comp-Off" action="action_comp_off_application" parent="hr_leave" sequence="20"/>
     <menuitem id="hr_leave_permission_request" name="Permission" action="action_permission_application" parent="hr_leave" sequence="30"/>
-    <menuitem id="hr_leave_availability" name="Leave Availability" action="action_leave_availability" parent="hr_leave" sequence="40"/>
-    <menuitem id="hr_leave_leave_level" name="Leave Level" action="action_leave_level" parent="hr_leave" sequence="50"/>
-    <menuitem id="hr_leave_leave_type" name="Leave Type" action="action_leave_type" parent="hr_leave" sequence="60"/>
-    <menuitem id="hr_leave_leave_config" name="Leave Configuration" action="action_leave_config" parent="hr_leave" sequence="70"/>
+    <menuitem id="hr_leave_on_duty_request" name="On Duty" action="action_on_duty_application" parent="hr_leave" sequence="40"/>
+    <menuitem id="hr_leave_availability" name="Leave Availability" action="action_leave_availability" parent="hr_leave" sequence="50"/>
+    <menuitem id="hr_leave_leave_level" name="Leave Level" action="action_leave_level" parent="hr_leave" sequence="60"/>
+    <menuitem id="hr_leave_leave_type" name="Leave Type" action="action_leave_type" parent="hr_leave" sequence="70"/>
+    <menuitem id="hr_leave_leave_config" name="Leave Configuration" action="action_leave_config" parent="hr_leave" sequence="80"/>
 
     <!--HR: Payroll-->
     <menuitem id="hr_payroll" name="Payroll" parent="menu_hr" sequence="500"/>

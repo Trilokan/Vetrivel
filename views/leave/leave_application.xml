@@ -35,6 +35,14 @@
                         <field name="person_id"/>
                         <field name="reason"/>
                     </group>
+                    <footer>
+                        <button name="trigger_confirm" string="Confirm" type="object"
+                                attrs="{'invisible': [('progress', '!=', 'draft')]}"/>
+                        <button name="trigger_cancel" string="Cancel" type="object"
+                                attrs="{'invisible': [('progress', '!=', 'confirmed')]}"/>
+                        <button name="trigger_approve" string="Approve" type="object"
+                                attrs="{'invisible': [('progress', '!=', 'confirmed')]}"/>
+                    </footer>
                 </sheet>
             </form>
         </field>

@@ -45,4 +45,4 @@ class SalaryStructureDetail(models.Model):
     progress = fields.Selection(PROGRESS_INFO, string='Progress', related='structure_id.progress')
 
     _sql_constraints = [('rule_uniq', 'unique(rule_id, structure_id)', 'Salary Structure Details should not duplicated'),
-                        ('sequence_check', 'CHECK(sequence < 1)', 'Check Sequence')]
+                        ('sequence_check', 'CHECK(sequence > 1)', 'Check Sequence')]

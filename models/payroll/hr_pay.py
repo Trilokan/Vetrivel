@@ -18,7 +18,7 @@ class HRPay(models.Model):
     writter = fields.Text(string="Writter", track_visibility='always')
 
     _sql_constraints = [('name_uniq', 'unique(employee_id)', 'Payscale is already configured'),
-                        ('basic_check', 'CHECK(basic < 1)', 'Check BASIC Pay')]
+                        ('basic_check', 'CHECK(basic > 1)', 'Check BASIC Pay')]
 
     def trigger_confirm(self):
         writter = "Pay detail for {0} with basic {1} Created by {2}".format(self.employee_id.name,

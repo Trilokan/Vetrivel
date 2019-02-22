@@ -5,6 +5,7 @@ from odoo import models, fields
 
 class LeaveLevelItem(models.Model):
     _name = "leave.level.item"
+    _order = "sequence"
 
     sequence = fields.Integer(string="Sequence")
     type_id = fields.Many2one(comodel_name="leave.type", string="Leave Type", required=True)

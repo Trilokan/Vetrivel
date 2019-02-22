@@ -14,19 +14,21 @@ class WorkSheet(models.Model):
     person_id = fields.Many2one(comodel_name="arc.person", string="Employee", readonly=True)
     month_id = fields.Many2one(comodel_name="month.attendance", string="Month", required=True)
     month_days = fields.Float(string="Days in Month", default=0.0, required=True)
-    total_days = fields.Float(string="Total Days", default=0.0, required=True)
+    un_schedule_days = fields.Float(string="Un Schedule Days", default=0.0, required=True)
     schedule_days = fields.Float(string="Schedule Days", default=0.0, required=True)
+    working_days = fields.Float(string="Working Days", default=0.0, required=True)
     holidays = fields.Float(string="Holidays", default=0.0, required=True)
-    present_days = fields.Float(string="Present Days", default=0.0, required=True)
-    ot_days = fields.Float(string="Total Days", default=0.0, required=True)
-    co_days = fields.Float(string="Total Days", default=0.0, required=True)
-    lop_days = fields.Float(string="Total Days", default=0.0, required=True)
-    leave_taken = fields.Float(string="Leave Days", default=0.0, required=True)
+    working_days_present = fields.Float(string="Working Days Present", default=0.0, required=True)
+    holidays_present = fields.Float(string="Holidays Present Days", default=0.0, required=True)
+    ot_days = fields.Float(string="OT Days", default=0.0, required=True)
+    co_days = fields.Float(string="Comp-off Days", default=0.0, required=True)
+    lop_days = fields.Float(string="Lop Days", default=0.0, required=True)
+    leave_taken = fields.Float(string="Leave Taken", default=0.0, required=True)
     leave_details = fields.One2many(comodel_name="leave.details", inverse_name="work_id")
     payslip_id = fields.Many2one(comodel_name="pay.slip", string="Payslip")
 
     def get_opening(self, person_id):
-        start_date = self.month_id.start_date
+        start_date = self.month_id.period_id.start_date
         start_date_obj = datetime.strptime(start_date, "%Y-%m-%d")
         actual_start_obj = start_date_obj - relativedelta(months=1)
         actual_end_obj = start_date_obj - timedelta(days=1)
@@ -36,8 +38,8 @@ class WorkSheet(models.Model):
         month_id = self.env["month.attendance"].search([("period_id.start_date", "=", start),
                                                         ("period_id.end_date", "=", end)])
 
-        sheet = self.env["work.sheet"].search([("month_id", "=", month_id.id), ("person_id", "=", person_id.id)])
-        recs = sheet.leave_details
+        work_id = self.env["work.sheet"].search([("month_id", "=", month_id.id), ("person_id", "=", person_id.id)])
+        recs = work_id.leave_details
 
         data = {}
         for rec in recs:
@@ -60,7 +62,7 @@ class WorkSheet(models.Model):
         for rec in recs:
             leave_type = rec.type_id.name
             data = {"type_id": rec.type_id.id,
-                    "level_id": rec.id,
+                    "level_id": rec.level_id.id,
                     "sequence": rec.sequence,
                     "work_id": self.id,
                     "opening": last_period.get(leave_type, 0),
@@ -84,7 +86,7 @@ class WorkSheet(models.Model):
         self.clear_content()
 
         config = self.env["leave.config"].search([("company_id", "=", self.env.user.company_id.id)])
-        recs = self.env["work.leave"].search([("type_id", "!=", config.lop_id.id), ("work_id", "=", self.id)])
+        recs = self.env["leave.details"].search([("type_id", "!=", config.lop_id.id), ("work_id", "=", self.id)])
 
         leave_taken = self.leave_taken
         for rec in recs:
@@ -98,6 +100,4 @@ class WorkSheet(models.Model):
                     leave_taken = leave_taken - total
 
             rec.closing = (rec.opening + rec.credit) - rec.reconcile
-
-        lop_rec = self.env["work.leave"].search([("type_id", "=", config.lop_id.id), ("work_id", "=", self.id)])
-        lop_rec.reconcile = leave_taken
+        self.lop_days = leave_taken

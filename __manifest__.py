@@ -84,7 +84,7 @@
         "views/leave/leave_application.xml",
         "views/leave/comp_off.xml",
         "views/leave/permission.xml",
-        # "views/leave/on_duty.xml",
+        "views/leave/on_duty.xml",
         "views/leave/leave_level.xml",
         "views/leave/leave_type.xml",
         "views/leave/leave_availability.xml",

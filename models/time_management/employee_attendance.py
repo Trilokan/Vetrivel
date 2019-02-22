@@ -22,6 +22,8 @@ class EmployeeAttendance(models.Model):
     actual_till_time = fields.Datetime(string="Actual Till Time", readonly=True)
     expected_hours = fields.Float(string="Expected Hours", default=0, readonly=True)
     actual_hours = fields.Float(string="Actual Hours", default=0, readonly=True)
+    permission_hours = fields.Float(string="Permission Hours", default=0, readonly=True)
+    on_duty_hours = fields.Float(string="On Duty Hours", default=0, readonly=True)
     day_progress = fields.Selection(DAY_PROGRESS, string='Day Status', readonly=True)
     availability_progress = fields.Selection(AVAIL_PROGRESS, string='Availability Status')
     progress = fields.Selection(PROGRESS_INFO, string='Progress', related='attendance_id.progress')
@@ -43,9 +45,11 @@ class EmployeeAttendance(models.Model):
         config = self.env["time.config"].search([("company_id", "=", self.env.user.company_id.id)])
         full_day = config.full_day
         half_day = config.half_day
-        if self.actual_hours >= full_day:
+        total_hours = self.actual_hours + self.permission_hours + self.on_duty_hours
+
+        if total_hours >= full_day:
             self.availability_progress = "full_day"
-        elif self.actual_hours >= half_day:
+        elif total_hours >= half_day:
             self.availability_progress = "half_day"
         else:
             self.availability_progress = "absent"

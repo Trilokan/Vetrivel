@@ -24,14 +24,17 @@ class LeaveApplication(models.Model):
     writter = fields.Text(string="Writter", track_visibility="always")
 
     def check_month(self):
-        attendance = self.env["employee.attendance"].search([("attendance_id.date", "=", self.from_date)])
+        attendance_id = self.env["employee.attendance"].search([("attendance_id.date", "=", self.from_date),
+                                                                ("person_id", "=", self.person_id.id)])
 
-        if attendance:
-            if attendance.attendance_id.month_id.progress == "closed":
-                raise exceptions.ValidationError("Error! Month is already closed")
+        if not attendance_id:
+            raise exceptions.ValidationError("Error! Month is not configured")
+
+        if attendance_id.attendance_id.month_id.progress == "closed":
+            raise exceptions.ValidationError("Error! Month is already closed")
 
     @api.multi
-    def trigger_confirmed(self):
+    def trigger_confirm(self):
         self.check_month()
         writter = "Leave application confirmed by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
         data = {"progress": "confirmed", "writter": writter}
@@ -39,7 +42,7 @@ class LeaveApplication(models.Model):
         self.write(data)
 
     @api.multi
-    def trigger_cancelled(self):
+    def trigger_cancel(self):
         self.check_month()
         writter = "Leave application cancelled by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
         data = {"progress": "cancelled", "writter": writter}
@@ -47,7 +50,7 @@ class LeaveApplication(models.Model):
         self.write(data)
 
     @api.multi
-    def trigger_approved(self):
+    def trigger_approve(self):
         self.check_month()
         writter = "Leave application approved by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
         data = {"progress": "approved", "writter": writter}
@@ -56,6 +59,5 @@ class LeaveApplication(models.Model):
 
     @api.model
     def create(self, vals):
-        self.check_month()
         vals["writter"] = "Leave application created by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
         return super(LeaveApplication, self).create(vals)

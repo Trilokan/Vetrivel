@@ -20,8 +20,22 @@ class MonthAttendance(models.Model):
 
     _sql_constraints = [('unique_period_id', 'unique (period_id)', 'Error! Month must be unique')]
 
+    def generate_work_sheet(self):
+        recs = self.env["arc.person"].search([("is_employee", "=", True), ("active", "=", True)])
+
+        for rec in recs:
+            work_sheet_id = self.env["work.sheet"].create({"person_id": rec.id, "month_id": self.id})
+            work_sheet_id.update_opening(rec)
+
+    def close_work_sheet(self):
+        recs = self.env["work.sheet"].search([("month_id", "=", self.id)])
+
+        for rec in recs:
+            rec.update_closing()
+
     @api.multi
     def trigger_open(self):
+        self.generate_work_sheet()
         writter = "Month Open by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
         data = {"progress": "open", "writter": writter}
 
@@ -29,6 +43,7 @@ class MonthAttendance(models.Model):
 
     @api.multi
     def trigger_close(self):
+        self.close_work_sheet()
         writter = "Month Closed by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
         data = {"progress": "closed", "writter": writter}
 

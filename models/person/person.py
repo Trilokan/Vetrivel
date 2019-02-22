@@ -10,6 +10,7 @@ class ArcPerson(models.Model):
     person_uid = fields.Char(string="ID Card No", readonly=True)
     image = fields.Binary(string="Image")
     small_image = fields.Binary(string="Small Image")
+    active = fields.Boolean(string="Active", default=True)
     company_id = fields.Many2one(comodel_name="res.company", string="Company",
                                  default=lambda self: self.env.user.company_id.id)
 
