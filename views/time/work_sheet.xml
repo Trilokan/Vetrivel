@@ -25,6 +25,8 @@
                     <group>
                         <field name="person_id"/>
                         <field name="month_id"/>
+                        <field name="month_days"/>
+                        <field name="schedule_days"/>
                         <field name="leave_taken"/>
                         <field name="lop_days"/>
                     </group>

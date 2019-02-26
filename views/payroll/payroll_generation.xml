@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <tree string="Payroll Generation">
                 <field name="month_id"/>
-                <field name="employee_ids"/>
+                <field name="person_ids"/>
                 <field name="progress"/>
             </tree>
         </field>
@@ -31,25 +31,21 @@
                     </group>
                     <notebook>
                         <page string="Employee">
-                            <field name="employee_ids" attrs="{'readonly': [('progress', '!=', 'draft')]}"
+                            <field name="person_ids" attrs="{'readonly': [('progress', '!=', 'draft')]}"
                                    options='{"no_open": True}'>
                                 <tree editable="bottom">
                                     <field name="name" readonly="1"/>
-                                    <field name="employee_uid" readonly="1"/>
+                                    <field name="person_uid" readonly="1"/>
                                     <field name="email" readonly="1"/>
                                     <field name="mobile" readonly="1"/>
-                                    <field name="designation_id" readonly="1"/>
-                                    <field name="category_id" readonly="1"/>
                                 </tree>
                                 <form>
                                     <sheet>
                                         <group col="4">
                                             <field name="name" readonly="1"/>
-                                            <field name="employee_uid" readonly="1"/>
+                                            <field name="person_uid" readonly="1"/>
                                             <field name="email" readonly="1"/>
                                             <field name="mobile" readonly="1"/>
-                                            <field name="designation_id" readonly="1"/>
-                                            <field name="category_id" readonly="1"/>
                                         </group>
                                     </sheet>
                                 </form>

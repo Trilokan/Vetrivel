@@ -11,6 +11,7 @@ CURRENT_INDIA = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
 class ArcJournal(models.Model):
     _name = "arc.journal"
+    _inherit = "mail.thread"
 
     date = fields.Date(string="Date", required=True, default=CURRENT_DATE)
     name = fields.Char(string="Name", readonly=True)

@@ -8,9 +8,10 @@ PROGRESS_INFO = [("draft", "Draft"), ("confirmed", "Confirmed"), ("approved", "A
 class InvoiceItem(models.Model):
     _name = "invoice.item"
 
+    ref_id = fields.Many2one(comodel_name="direct.purchase.item")
     product_id = fields.Many2one(comodel_name="arc.product", string="Product")
     description = fields.Text(string="Description")
-    uom_id = fields.Many2one(comodel_name="product.uom", string="UOM")
+    uom_id = fields.Many2one(comodel_name="product.uom", string="UOM", related="product_id.uom_id")
     quantity = fields.Float(string="Quantity", required=True, default=0.0)
     unit_price = fields.Float(string="Unit Price", required=True, default=0.0)
     discount = fields.Float(string="Discount", required=True, default=0.0)
@@ -34,9 +35,11 @@ class InvoiceItem(models.Model):
         else:
             state_type = "outer"
 
-        self.env["arc.calculation"].get_item_val(self.unit_price,
-                                                 self.quantity,
-                                                 self.discount,
-                                                 self.pf,
-                                                 self.tax_id.rate,
-                                                 state_type)
+        vals = self.env["arc.calculation"].get_item_val(self.unit_price,
+                                                        self.quantity,
+                                                        self.discount,
+                                                        self.pf,
+                                                        self.tax_id.rate,
+                                                        state_type)
+
+        self.write(vals)

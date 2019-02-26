@@ -7,7 +7,7 @@
         <field name="model">hr.pay</field>
         <field name="arch" type="xml">
             <tree string="HR Pay">
-                <field name="employee_id"/>
+                <field name="person_id"/>
                 <field name="basic"/>
                 <field name="progress"/>
             </tree>
@@ -26,7 +26,7 @@
                     </div>
                     <field name="progress" widget="statusbar" style="float: right;padding: 20px;"/>
                     <group>
-                        <field name="employee_id" attrs="{'readonly': [('progress', '!=', 'draft')]}"/>
+                        <field name="person_id" attrs="{'readonly': [('progress', '!=', 'draft')]}"/>
                         <field name="basic" attrs="{'readonly': [('progress', '!=', 'draft')]}"/>
                         <field name="structure_id" attrs="{'readonly': [('progress', '!=', 'draft')]}"/>
                     </group>
@@ -34,7 +34,7 @@
                         <button name="trigger_confirm" string="Confirm" type="object"
                                 attrs="{'invisible': [('progress', '!=', 'draft')]}"/>
                         <button class="oe_stat_button" name="%(action_hr_pay_wizard)d" type="action"
-                                context="{'employee_id': employee_id,
+                                context="{'person_id': person_id,
                                           'structure_id': structure_id,
                                           'basic': basic }"
                                 string="Salary Update"/>

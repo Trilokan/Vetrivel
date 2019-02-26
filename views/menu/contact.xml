@@ -11,5 +11,6 @@
     <menuitem id="person_Contact_supplier" name="Supplier" action="action_arc_person_supplier" parent="person_contact" sequence="60"/>
     <menuitem id="person_Contact_service" name="Service" action="action_arc_person_service" parent="person_contact" sequence="70"/>
     <menuitem id="person_Contact_others" name="Others" action="action_arc_person_others" parent="person_contact" sequence="80"/>
+    <menuitem id="person_Contact_arc_person" name="Person" action="action_arc_person" parent="person_contact" sequence="90"/>
 
 </odoo>

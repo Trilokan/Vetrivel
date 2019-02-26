@@ -13,3 +13,6 @@ from . import payroll
 from . import product
 from . import stock
 from . import purchase
+from . import hospital
+from . import doctor
+from . import invoice

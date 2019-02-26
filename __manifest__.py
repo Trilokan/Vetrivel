@@ -36,10 +36,16 @@
         "sequence/purchase.xml",
 
         # Account
+        "views/account/account.xml",
         "views/account/period.xml",
+        "views/account/journal.xml",
+        "views/account/journal_item.xml",
+        "views/account/journal_type.xml",
+        "views/account/reconcile.xml",
 
         # Base
         "views/base/users.xml",
+        "views/base/company.xml",
 
         # Person
         "views/person/person.xml",
@@ -116,12 +122,27 @@
         "views/stock/store_return.xml",
         "views/stock/store_accept.xml",
         "views/stock/arc_move.xml",
+        "views/stock/material_in.xml",
         "views/configuration/store_config.xml",
 
         # Asserts
 
         # Purchase
         "views/purchase/indent.xml",
+        "views/purchase/direct_purchase.xml",
+
+        # Invoice
+        "views/invoice/invoice.xml",
+
+        # Hospital
+        "views/hospital/ward.xml",
+        "views/hospital/bed.xml",
+        "views/hospital/notes.xml",
+        "views/hospital/reminder.xml",
+        "views/hospital/doctor_timing.xml",
+
+        # Appointment
+        "views/appointment/opt.xml",
 
         # Menu
         "views/menu/main_menu.xml",
@@ -130,6 +151,7 @@
         "views/menu/hr.xml",
         "views/menu/inventory.xml",
         "views/menu/purchase.xml",
+        "views/menu/hospital.xml",
         # "views/menu/asserts.xml",
 
 

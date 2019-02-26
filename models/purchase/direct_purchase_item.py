@@ -1,16 +1,20 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields
+from odoo import models, fields, api
 
-PROGRESS_INFO = [("draft", "Draft"), ("confirmed", "Confirmed"), ("approved", "Approved")]
+PROGRESS_INFO = [("draft", "Draft"),
+                 ("confirmed", "Confirmed"),
+                 ("approved", "Approved"),
+                 ("cancel", "Cancel")]
 
 
 class DirectPurchaseItem(models.Model):
     _name = "direct.purchase.item"
 
-    product_id = fields.Many2one(comodel_name="arc.product", string="Product")
-    description = fields.Text(string="Description")
-    uom_id = fields.Many2one(comodel_name="product.uom", string="UOM")
+    name = fields.Char(string="Name", readonly=True)
+    product_id = fields.Many2one(comodel_name="arc.product", string="Product", required=True)
+    description = fields.Text(string="Description", required=True)
+    uom_id = fields.Many2one(comodel_name="product.uom", string="UOM", related="product_id.uom_id")
     quantity = fields.Float(string="Quantity", required=True, default=0.0)
     unit_price = fields.Float(string="Unit Price", required=True, default=0.0)
     discount = fields.Float(string="Discount", required=True, default=0.0)
@@ -23,20 +27,27 @@ class DirectPurchaseItem(models.Model):
     sgst = fields.Float(string="SGST", required=True, readonly=True, default=0.0)
     igst = fields.Float(string="IGST", required=True, readonly=True, default=0.0)
     total = fields.Float(string="Total", required=True, readonly=True, default=0.0)
-    dpo_id = fields.Many2one(comodel_name="direct.purchase", string="Invoice")
-    progress = fields.Selection(selection=PROGRESS_INFO, string="Progress", related="dpo_id.progress")
+    order_id = fields.Many2one(comodel_name="direct.purchase", string="Invoice")
+    progress = fields.Selection(selection=PROGRESS_INFO, string="Progress", related="order_id.progress")
 
     def update_total(self):
-        state = self.dpo_id.person_id.state_id.id
+        state = self.order_id.person_id.state_id.id
 
         if state == self.env.user.company_id.state_id.id:
             state_type = "inter"
         else:
             state_type = "outer"
 
-        self.env["arc.calculation"].get_item_val(self.unit_price,
-                                                 self.quantity,
-                                                 self.discount,
-                                                 self.pf,
-                                                 self.tax_id.rate,
-                                                 state_type)
+        vals = self.env["arc.calculation"].get_item_val(self.unit_price,
+                                                        self.quantity,
+                                                        self.discount,
+                                                        self.pf,
+                                                        self.tax_id.rate,
+                                                        state_type)
+
+        self.write(vals)
+
+    @api.model
+    def create(self, vals):
+        vals["name"] = self.env["ir.sequence"].next_by_code(self._name)
+        return super(DirectPurchaseItem, self).create(vals)
