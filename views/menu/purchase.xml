@@ -5,6 +5,7 @@
     <menuitem id="purchase_product" name="Product" parent="menu_purchase" sequence="10"/>
     <menuitem id="purchase_product_purchase_indent" name="Purchase Indent" action="action_purchase_indent" parent="purchase_product" sequence="10"/>
     <menuitem id="purchase_product_direct_purchase" name="Direct Purchase" action="action_direct_purchase" parent="purchase_product" sequence="20"/>
+    <menuitem id="purchase_product_sale_order" name="Sale Order" action="action_sale_order" parent="purchase_product" sequence="30"/>
     <menuitem id="purchase_product_arc_invoice" name="Invoice" action="action_arc_invoice" parent="purchase_product" sequence="30"/>
 
 </odoo>

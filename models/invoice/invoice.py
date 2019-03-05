@@ -26,7 +26,7 @@ class Invoice(models.Model):
     address = fields.Text(string="Address")
     item_ids = fields.One2many(comodel_name="invoice.item", inverse_name="invoice_id")
     progress = fields.Selection(selection=PROGRESS_INFO, default="draft")
-    invoice_type = fields.Selection(selection=PROGRESS_INFO, string="Invoice Type")
+    invoice_type = fields.Selection(selection=INVOICE_TYPE, string="Invoice Type")
 
     # Calculation
     sub_total_amount = fields.Float(string="Sub Total", required=True, readonly=True, default=0.0)

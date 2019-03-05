@@ -123,6 +123,7 @@
         "views/stock/store_accept.xml",
         "views/stock/arc_move.xml",
         "views/stock/material_in.xml",
+        "views/stock/material_out.xml",
         "views/configuration/store_config.xml",
 
         # Asserts
@@ -130,6 +131,9 @@
         # Purchase
         "views/purchase/indent.xml",
         "views/purchase/direct_purchase.xml",
+
+        # Sales
+        "views/sales/sale_order.xml",
 
         # Invoice
         "views/invoice/invoice.xml",

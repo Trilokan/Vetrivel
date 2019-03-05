@@ -7,6 +7,7 @@
             <link rel="stylesheet" href="/vetrivel/static/src/css/status_bar.less"/>
             <link rel="stylesheet" href="/vetrivel/static/src/css/matrix.css"/>
             <link rel="stylesheet" href="/vetrivel/static/src/css/suchi.css"/>
+            <link rel="stylesheet" href="/vetrivel/static/src/css/card_css.css"/>
         </xpath>
     </template>
 </odoo>

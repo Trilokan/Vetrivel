@@ -9,6 +9,7 @@
             <tree string="Product UOM">
                 <field name="name"/>
                 <field name="uom_uid"/>
+                <field name="variance"/>
             </tree>
         </field>
     </record>
@@ -26,6 +27,7 @@
                     <group>
                         <field name="name"/>
                         <field name="uom_uid"/>
+                        <field name="variance"/>
                     </group>
                 </sheet>
             </form>

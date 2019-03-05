@@ -8,6 +8,7 @@ PROGRESS_INFO = [("draft", "Draft"), ("confirmed", "Confirmed")]
 class Product(models.Model):
     _name = "arc.product"
 
+    image = fields.Binary(string="Image")
     name = fields.Char(string="Name", required=True)
     product_uid = fields.Char(string="Code", readonly=True)
     product_group_id = fields.Many2one(comodel_name="product.group", string="Group", required=True)

@@ -7,22 +7,22 @@ PROGRESS_INFO = [("draft", "Draft"),
                  ("confirmed", "Confirmed"),
                  ("approved", "Approved"),
                  ("cancel", "Cancel")]
-ORDER_TYPE = [("purchase", "Purchase"), ("purchase_return", "Purchase Return")]
+ORDER_TYPE = [("sales", "Sales"), ("sale_return", "Sales Return")]
 CURRENT_DATE = datetime.now().strftime("%Y-%m-%d")
 CURRENT_TIME = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 CURRENT_TIME_INDIA = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
 
-class DirectPurchase(models.Model):
-    _name = "direct.purchase"
+class SaleOrder(models.Model):
+    _name = "sale.order"
     _inherit = "mail.thread"
 
     name = fields.Char(string="Name", readonly=True)
     date = fields.Date(string="Date", default=CURRENT_DATE, required=True)
     person_id = fields.Many2one(comodel_name="arc.person", string="Person", required=True)
     address = fields.Text(string="Address")
-    item_ids = fields.One2many(comodel_name="direct.purchase.item", inverse_name="order_id")
-    order_type = fields.Selection(selection=ORDER_TYPE, default="purchase", string="Order Type")
+    item_ids = fields.One2many(comodel_name="sale.order.item", inverse_name="order_id")
+    order_type = fields.Selection(selection=ORDER_TYPE, default="sales", string="Order Type")
     progress = fields.Selection(selection=PROGRESS_INFO, default="draft")
 
     # Calculation
@@ -48,7 +48,7 @@ class DirectPurchase(models.Model):
     @api.multi
     def trigger_confirm(self):
         self.trigger_update_total()
-        writter = "Purchase confirmed by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
+        writter = "Sales confirmed by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
         data = {"progress": "confirmed", "writter": writter}
 
         self.write(data)
@@ -56,7 +56,7 @@ class DirectPurchase(models.Model):
     @api.multi
     def trigger_cancel(self):
         self.trigger_update_total()
-        writter = "Purchase cancelled by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
+        writter = "Sales cancelled by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
         data = {"progress": "cancel", "writter": writter}
 
         self.write(data)
@@ -64,12 +64,12 @@ class DirectPurchase(models.Model):
     @api.multi
     def trigger_approve(self):
         self.trigger_update_total()
-        if self.order_type == "purchase":
-            self.generate_material_in()
-        elif self.order_type == "purchase_return":
+        if self.order_type == "sales":
             self.generate_material_out()
+        elif self.order_type == "sale_return":
+            self.generate_material_in()
 
-        writter = "Purchase approved by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
+        writter = "Sales approved by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
         data = {"progress": "approved", "writter": writter}
 
         self.write(data)
@@ -86,7 +86,7 @@ class DirectPurchase(models.Model):
 
         if in_detail:
             material_in = {"person_id": self.person_id.id,
-                           "dpo_id": self.id,
+                           "so_id": self.id,
                            "in_detail": in_detail}
 
             self.env["material.in"].create(material_in)
@@ -103,7 +103,7 @@ class DirectPurchase(models.Model):
 
         if out_detail:
             material_out = {"person_id": self.person_id.id,
-                            "dpo_id": self.id,
+                            "so_id": self.id,
                             "out_detail": out_detail}
 
             self.env["material.out"].create(material_out)
@@ -138,5 +138,5 @@ class DirectPurchase(models.Model):
     @api.model
     def create(self, vals):
         vals["name"] = self.env["ir.sequence"].next_by_code(self._name)
-        vals["writter"] = "Purchase created by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
-        return super(DirectPurchase, self).create(vals)
+        vals["writter"] = "Sales created by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
+        return super(SaleOrder, self).create(vals)

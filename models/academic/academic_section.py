@@ -15,3 +15,4 @@ class AcademicSection(models.Model):
     # Exam
     # Test
     # Time Table
+

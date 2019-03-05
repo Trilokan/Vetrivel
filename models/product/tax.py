@@ -8,7 +8,7 @@ class ProductTax(models.Model):
 
     name = fields.Char(string="Name", required=True)
     tax_uid = fields.Char(string="Code", required=True)
-    rate = fields.Float(string="Rate", default=0, required=True)
+    rate = fields.Float(string="Rate", default=0.0, required=True)
 
     _sql_constraints = [("tax_uid", "unique(tax_uid)", "Tax must be unique"),
                         ("name_rate", "unique(name, rate)", "Tax must be unique")]
