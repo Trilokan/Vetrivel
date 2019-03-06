@@ -80,7 +80,7 @@ class StoreReturnDetail(models.Model):
     return_id = fields.Many2one(comodel_name="store.return", string="Store Return")
     progress = fields.Selection(selection=PROGRESS_INFO, string="Progress", related="return_id.progress")
 
-    @api.constrains("quantity")
+    @api.constrains("returned_quantity")
     def check_requested_quantity(self):
         if self.approved_quantity > self.returned_quantity:
             raise exceptions.ValidationError("Error! Approved quantity more than return quantity")

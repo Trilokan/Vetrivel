@@ -32,7 +32,8 @@
         "sequence/person.xml",
         "sequence/employee.xml",
         "sequence/product.xml",
-        "sequence/store.xml",
+        "sequence/stores.xml",
+        "sequence/asserts.xml",
         "sequence/purchase.xml",
 
         # Account
@@ -127,6 +128,10 @@
         "views/configuration/store_config.xml",
 
         # Asserts
+        "views/asserts/asserts_capitalisation.xml",
+        "views/asserts/asserts.xml",
+        "views/asserts/asserts_maintenance.xml",
+        "views/asserts/asserts_notification.xml",
 
         # Purchase
         "views/purchase/indent.xml",
@@ -150,14 +155,21 @@
 
         # Menu
         "views/menu/main_menu.xml",
+        "views/menu/product.xml",
+        "views/menu/stores.xml",
+        "views/menu/asserts.xml",
         "views/menu/account.xml",
         "views/menu/contact.xml",
         "views/menu/hr.xml",
-        "views/menu/inventory.xml",
+        "views/menu/time_management.xml",
+        "views/menu/leave_management.xml",
+        "views/menu/recruitment.xml",
+        "views/menu/hr_actions.xml",
+        "views/menu/payroll.xml",
+
+
         "views/menu/purchase.xml",
         "views/menu/hospital.xml",
-        # "views/menu/asserts.xml",
-
 
     ],
     "demo": [

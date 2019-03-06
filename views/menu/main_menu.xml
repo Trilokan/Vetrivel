@@ -7,8 +7,20 @@
     <menuitem id="menu_doctor" name="Doctor" sequence="30"/>
     <menuitem id="menu_patient" name="Patient" sequence="40"/>
     <menuitem id="menu_employee" name="Employee" sequence="50"/>
+
     <menuitem id="menu_hr" name="Human Resources" sequence="60"/>
+    <menuitem id="hr_hr" name="Human Resources" parent="menu_hr" sequence="10"/>
+    <menuitem id="hr_time" name="Time Management" parent="menu_hr" sequence="20"/>
+    <menuitem id="hr_leave" name="Leave Management" parent="menu_hr" sequence="30"/>
+    <menuitem id="hr_recruitment" name="Recruitment" parent="menu_hr" sequence="40"/>
+    <menuitem id="hr_payroll" name="Payroll" parent="menu_hr" sequence="50"/>
+    <menuitem id="hr_actions" name="HR Actions" parent="menu_hr" sequence="60"/>
+
     <menuitem id="menu_inventory" name="Inventory" sequence="70"/>
+    <menuitem id="inventory_product" name="Product" parent="menu_inventory" sequence="10"/>
+    <menuitem id="inventory_stock" name="Stock" parent="menu_inventory" sequence="20"/>
+    <menuitem id="inventory_asserts" name="Asserts" parent="menu_inventory" sequence="30"/>
+
     <menuitem id="menu_purchase" name="Purchase" sequence="80"/>
     <menuitem id="menu_pharmacy" name="Pharmacy" sequence="90"/>
     <menuitem id="menu_account" name="Account" sequence="100"/>

@@ -29,3 +29,17 @@ class ArcStock(models.Model):
         quantity_out = sum(destination_ids.mapped("quantity"))
 
         return quantity_out - quantity_in
+
+    def get_current_stock_value(self, product_id, location_id):
+        source_ids = self.env["arc.move"].search([("product_id", "=", product_id),
+                                                  ("source_id", "=", location_id),
+                                                  ("progress", "=", "moved")])
+
+        destination_ids = self.env["arc.move"].search([("product_id", "=", product_id),
+                                                       ("destination_id", "=", location_id),
+                                                       ("progress", "=", "moved")])
+
+        quantity_in = sum(source_ids.mapped("stock_value"))
+        quantity_out = sum(destination_ids.mapped("stock_value"))
+
+        return quantity_out - quantity_in

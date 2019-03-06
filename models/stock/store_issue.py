@@ -76,7 +76,7 @@ class StoreIssueDetail(models.Model):
     issue_id = fields.Many2one(comodel_name="store.issue", string="Store Issue")
     progress = fields.Selection(selection=PROGRESS_INFO, string="Progress", related="issue_id.progress")
 
-    @api.constrains("quantity")
+    @api.constrains("issue_quantity")
     def check_issue_quantity(self):
         if self.issue_quantity > self.requested_quantity:
             raise exceptions.ValidationError("Error! Issue quantity more than requested")

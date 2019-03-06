@@ -32,8 +32,8 @@ class Product(models.Model):
     purchase_invoice_count = fields.Float(string="Purchase Invoice", compute="_get_assert_count")
     sale_order_count = fields.Float(string="Sale Order", compute="_get_assert_count")
     purchase_order_count = fields.Float(string="Purchase Order", compute="_get_assert_count")
-    stock_count = fields.Float(string="Stock", compute="_get_assert_count")
-    stock_value = fields.Float(string="Stock Value", compute="_get_assert_count")
+    stock_count = fields.Float(string="Available Stock", compute="_get_stock_count")
+    stock_value = fields.Float(string="Stock Value", compute="_get_stock_value")
     incoming_shipment = fields.Float(string="Incoming Shipment", compute="_get_assert_count")
 
     _sql_constraints = [("product_uid", "unique(product_uid)", "Product Code must be unique")]
@@ -44,6 +44,19 @@ class Product(models.Model):
 
     def _get_assert_count(self):
         return 0
+
+    def _get_stock_count(self):
+        config = self.env["store.config"].search([("company_id", "=", self.env.user.company_id.id)])
+        for rec in self:
+            rec.stock_count = self.env["arc.stock"].get_current_stock(rec.id, config.store_id.id)
+
+        return True
+
+    def _get_stock_value(self):
+        config = self.env["store.config"].search([("company_id", "=", self.env.user.company_id.id)])
+        for rec in self:
+            rec.stock_value = self.env["arc.stock"].get_current_stock_value(rec.id, config.store_id.id)
+        return True
 
     @api.one
     def _get_warehouse_ids(self):

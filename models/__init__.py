@@ -12,6 +12,7 @@ from . import leave_management
 from . import payroll
 from . import product
 from . import stock
+from . import asserts
 from . import purchase
 from . import sales
 from . import hospital

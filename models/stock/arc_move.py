@@ -20,8 +20,9 @@ class ArcMove(models.Model):
     product_id = fields.Many2one(comodel_name="arc.product", string="Item", required=True)
     description = fields.Text(string="Description")
     uom_id = fields.Many2one(comodel_name="product.uom", string="UOM", related="product_id.uom_id")
-    quantity = fields.Float(string="Quantity", default=0, required=True)
-    unit_price = fields.Float(string="Unit Price", default=0, required=True)
+    quantity = fields.Float(string="Quantity", default=0.0, required=True)
+    unit_price = fields.Float(string="Unit Price", default=0.0, required=True)
+    stock_value = fields.Float(string="Stock Value", default=0.0, required=True)
     progress = fields.Selection(selection=PROGRESS_INFO, string="Progress")
     reference = fields.Text(string="Reference")
 

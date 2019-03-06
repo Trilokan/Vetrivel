@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--HR: Leave Management-->
+    <menuitem id="hr_leave_leave_request" name="Leave Request" action="action_leave_application" parent="hr_leave" sequence="10"/>
+    <menuitem id="hr_leave_comp_off_request" name="Comp-Off" action="action_comp_off_application" parent="hr_leave" sequence="20"/>
+    <menuitem id="hr_leave_permission_request" name="Permission" action="action_permission_application" parent="hr_leave" sequence="30"/>
+    <menuitem id="hr_leave_on_duty_request" name="On Duty" action="action_on_duty_application" parent="hr_leave" sequence="40"/>
+    <menuitem id="hr_leave_availability" name="Leave Availability" action="action_leave_availability" parent="hr_leave" sequence="50"/>
+    <menuitem id="hr_leave_leave_level" name="Leave Level" action="action_leave_level" parent="hr_leave" sequence="60"/>
+    <menuitem id="hr_leave_leave_type" name="Leave Type" action="action_leave_type" parent="hr_leave" sequence="70"/>
+    <menuitem id="hr_leave_leave_config" name="Leave Configuration" action="action_leave_config" parent="hr_leave" sequence="80"/>
+
+
+</odoo>
