@@ -81,8 +81,8 @@
 
                         <page string="Accounting">
                             <group col="4">
-                                <field name="payable" attrs="{'readonly': [('progress', '!=', 'draft')]}"/>
-                                <field name="receivable" attrs="{'readonly': [('progress', '!=', 'draft')]}"/>
+                                <field name="payable_id" attrs="{'readonly': [('progress', '!=', 'draft')]}"/>
+                                <field name="receivable_id" attrs="{'readonly': [('progress', '!=', 'draft')]}"/>
                             </group>
                         </page>
 

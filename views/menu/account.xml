@@ -7,6 +7,7 @@
     <menuitem id="account_account_arc_period" name="Period" action="action_arc_period" parent="account_account" sequence="20"/>
     <menuitem id="account_account_arc_journal" name="Journal" action="action_arc_journal" parent="account_account" sequence="30"/>
     <menuitem id="account_account_journal_type" name="Journal Type" action="action_journal_type" parent="account_account" sequence="40"/>
+    <menuitem id="account_account_account_config" name="Configuration" action="action_account_config" parent="account_account" sequence="50"/>
 
 
 </odoo>

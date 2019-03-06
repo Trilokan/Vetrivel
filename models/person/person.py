@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions
 
 
 class ArcPerson(models.Model):
@@ -50,6 +50,19 @@ class ArcPerson(models.Model):
 
     employee_type = fields.Many2one(comodel_name="employee.type", string="Employee Type")
     vendor_type = fields.Many2one(comodel_name="vendor.type", string="vendor Type")
+
+    def get_account_id(self, invoice_type):
+        account_id = False
+        if invoice_type in ["sales", "purchase_return"]:
+            account_id = self.payable_id.id
+        elif invoice_type in ["purchase", "sales_return"]:
+            account_id = self.receivable_id.id
+
+        if not account_id:
+            msg = "Error! Account is not configured for the {0}".format(self.name)
+            raise exceptions.ValidationError(msg)
+
+        return account_id
 
     @api.model
     def create(self, vals):

@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
 
 from . import invoice
-from . import invoice_item
+from . import invoice_detail

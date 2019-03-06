@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+
+        <!-- Invoice : arc.invoice_sales -->
+        <record id="arc_invoice_sales_sequence" model="ir.sequence">
+            <field name="name">Invoice Sales</field>
+            <field name="code">arc.invoice_sales</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Invoice : arc.invoice_sales_return -->
+        <record id="arc_invoice_sales_return_sequence" model="ir.sequence">
+            <field name="name">Invoice Sales Return</field>
+            <field name="code">arc.invoice_sales_return</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Invoice : arc.invoice_purchase -->
+        <record id="arc_invoice_purchase_sequence" model="ir.sequence">
+            <field name="name">Invoice Purchase</field>
+            <field name="code">arc.invoice_purchase</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Invoice : arc.invoice_purchase_return -->
+        <record id="arc_invoice_purchase_return_sequence" model="ir.sequence">
+            <field name="name">Invoice Purchase Return</field>
+            <field name="code">arc.invoice_purchase_return</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+    </data>
+
+</odoo>

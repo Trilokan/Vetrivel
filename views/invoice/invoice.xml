@@ -30,10 +30,11 @@
                         <field name="date"/>
                         <field name="person_id"/>
                         <field name="address"/>
+                        <field name="invoice_type"/>
                     </group>
                     <notebook>
-                        <page string="Order Detail">
-                            <field name="item_ids" attrs="{'readonly': [('progress', '!=', 'draft')]}">
+                        <page string="Invoice Detail">
+                            <field name="invoice_detail" attrs="{'readonly': [('progress', '!=', 'draft')]}">
                                 <tree editable="bottom">
                                     <field name="product_id"/>
                                     <field name="uom_id" readonly="1"/>

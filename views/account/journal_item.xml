@@ -10,6 +10,7 @@
                 <field name="date"/>
                 <field name="name"/>
                 <field name="person_id"/>
+                <field name="account_id"/>
                 <field name="invoice_id"/>
                 <field name="journal_type_id"/>
                 <field name="description"/>
@@ -39,6 +40,7 @@
                     <group>
                         <field name="date" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
                         <field name="person_id" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
+                        <field name="account_id" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
                         <field name="invoice_id" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
                         <field name="journal_type_id" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
                         <field name="description" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>

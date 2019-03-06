@@ -5,10 +5,10 @@ from odoo import models, fields
 PROGRESS_INFO = [("draft", "Draft"), ("confirmed", "Confirmed"), ("approved", "Approved")]
 
 
-class InvoiceItem(models.Model):
-    _name = "invoice.item"
+class InvoiceDetail(models.Model):
+    _name = "invoice.detail"
 
-    ref_id = fields.Many2one(comodel_name="direct.purchase.item")
+    ref_id = fields.Char(string="Reference")
     product_id = fields.Many2one(comodel_name="arc.product", string="Product")
     description = fields.Text(string="Description")
     uom_id = fields.Many2one(comodel_name="product.uom", string="UOM", related="product_id.uom_id")

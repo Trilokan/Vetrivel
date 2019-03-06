@@ -15,6 +15,7 @@ class JournalItem(models.Model):
     date = fields.Date(string="Date", required=True, default=CURRENT_DATE)
     name = fields.Char(string="Name", readonly=True)
     invoice_id = fields.Many2one(comodel_name="arc.invoice", string="Invoice")
+    account_id = fields.Many2one(comodel_name="arc.account", string="Account")
     journal_type_id = fields.Many2one(comodel_name="journal.type", string="Journal Type", required=True)
     person_id = fields.Many2one(comodel_name="arc.person", string="Person")
     description = fields.Text(string="Description")

@@ -35,6 +35,7 @@
         "sequence/stores.xml",
         "sequence/asserts.xml",
         "sequence/purchase.xml",
+        "sequence/invoice.xml",
 
         # Account
         "views/account/account.xml",
@@ -43,6 +44,7 @@
         "views/account/journal_item.xml",
         "views/account/journal_type.xml",
         "views/account/reconcile.xml",
+        "views/configuration/account_config.xml",
 
         # Base
         "views/base/users.xml",

@@ -23,8 +23,8 @@ class Product(models.Model):
                                     compute="_get_warehouse_ids")
 
     # Accounting
-    payable = fields.Many2one(comodel_name="arc.account", string="Payable")
-    receivable = fields.Many2one(comodel_name="arc.account", string="Receivable")
+    payable_id = fields.Many2one(comodel_name="arc.account", string="Payable")
+    receivable_id = fields.Many2one(comodel_name="arc.account", string="Receivable")
 
     # Smart Button
     assert_count = fields.Float(string="Assert", compute="_get_assert_count")
@@ -94,3 +94,17 @@ class Product(models.Model):
             name = "[{0}] {1}".format(record.product_uid, record.name)
             result.append((record.id, name))
         return result
+
+    def get_account_id(self, invoice_type):
+        account_id = False
+        if invoice_type in ["sales", "purchase_return"]:
+            account_id = self.payable_id.id
+        elif invoice_type in ["purchase", "sales_return"]:
+            account_id = self.receivable_id.id
+
+        if not account_id:
+            msg = "Error! Account is not configured for the {0}".format(self.name)
+            raise exceptions.ValidationError(msg)
+
+        return account_id
+

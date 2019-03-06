@@ -24,9 +24,9 @@ class Invoice(models.Model):
     date = fields.Date(string="Date", default=CURRENT_DATE, required=True)
     person_id = fields.Many2one(comodel_name="arc.person", string="Person", required=True)
     address = fields.Text(string="Address")
-    item_ids = fields.One2many(comodel_name="invoice.item", inverse_name="invoice_id")
+    invoice_detail = fields.One2many(comodel_name="invoice.detail", inverse_name="invoice_id")
     progress = fields.Selection(selection=PROGRESS_INFO, default="draft")
-    invoice_type = fields.Selection(selection=INVOICE_TYPE, string="Invoice Type")
+    invoice_type = fields.Selection(selection=INVOICE_TYPE, string="Invoice Type", required=True)
 
     # Calculation
     sub_total_amount = fields.Float(string="Sub Total", required=True, readonly=True, default=0.0)
@@ -91,7 +91,7 @@ class Invoice(models.Model):
 
     @api.multi
     def trigger_update_total(self):
-        recs = self.item_ids
+        recs = self.invoice_detail
 
         sub_total_amount = cgst = sgst = igst = tax_amount = pf = discount_amount = 0
         for rec in recs:
@@ -129,7 +129,8 @@ class Invoice(models.Model):
 
     @api.multi
     def get_journal_items(self):
-        recs = self.item_ids
+        config = self.env["account.config"].search([("company_id", "=", self.env.user.company_id.id)])
+        recs = self.invoice_detail
 
         data = {"date": self.date,
                 "invoice_id": self.id,
@@ -138,20 +139,21 @@ class Invoice(models.Model):
 
         line_detail = []
         for rec in recs:
-            item = {}
-            item.update(data)
             amount = self.get_credit_debit(rec.after_discount)
             description = "{0} \n {1} \n {2}".format(rec.product_id.product_uid,
                                                      rec.product_id.name,
                                                      rec.product_id.description)
-            item["description"] = description
-            item["credit"] = amount["credit"]
-            item["debit"] = amount["debit"]
+            item = {"account_id": rec.product_id.get_account_id(self.invoice_type),
+                    "description": description,
+                    "credit": amount["credit"],
+                    "debit": amount["debit"]}
+            item.update(data)
             line_detail.append((0, 0, item))
 
         # CGST
         amount = self.get_credit_debit(self.cgst)
-        item = {"description": "CGST",
+        item = {"account_id": config.cgst_id.id,
+                "description": "CGST",
                 "credit": amount["credit"],
                 "debit": amount["debit"]}
         item.update(data)
@@ -159,7 +161,8 @@ class Invoice(models.Model):
 
         # SGST
         amount = self.get_credit_debit(self.sgst)
-        item = {"description": "SGST",
+        item = {"account_id": config.sgst_id.id,
+                "description": "SGST",
                 "credit": amount["credit"],
                 "debit": amount["debit"]}
         item.update(data)
@@ -167,7 +170,8 @@ class Invoice(models.Model):
 
         # IGST
         amount = self.get_credit_debit(self.igst)
-        item = {"description": "SGST",
+        item = {"account_id": config.igst_id.id,
+                "description": "SGST",
                 "credit": amount["credit"],
                 "debit": amount["debit"]}
         item.update(data)
@@ -175,7 +179,8 @@ class Invoice(models.Model):
 
         # Round-Off
         amount = self.get_credit_debit(self.round_off)
-        item = {"description": "SGST",
+        item = {"account_id": config.round_off_id.id,
+                "description": "SGST",
                 "credit": amount["credit"],
                 "debit": amount["debit"]}
         item.update(data)
@@ -183,7 +188,8 @@ class Invoice(models.Model):
 
         # Packing & Forwarding
         amount = self.get_credit_debit(self.pf)
-        item = {"description": "Packing and forwarding",
+        item = {"account_id": config.pf_id.id,
+                "description": "Packing and forwarding",
                 "credit": amount["credit"],
                 "debit": amount["debit"]}
         item.update(data)
@@ -193,7 +199,8 @@ class Invoice(models.Model):
         amount = self.get_credit_debit(self.grand_amount)
         description = "Credit for the {0} {1}".format(self.person_id.person_uid,
                                                       self.person_id.name)
-        item = {"description": description,
+        item = {"account_id": self.person_id.get_account_id(self.invoice_type),
+                "description": description,
                 "credit": amount["debit"],
                 "debit": amount["credit"]}
         item.update(data)
@@ -202,6 +209,8 @@ class Invoice(models.Model):
         return line_detail
 
     def get_journal_type_id(self):
+        journal_type_id = False
+
         if self.invoice_type == "sales":
             journal_type_id = self.env["journal.type"].search([("name", "=", "Sales")])
         elif self.invoice_type == "purchase":
@@ -227,6 +236,7 @@ class Invoice(models.Model):
 
     @api.model
     def create(self, vals):
-        vals["name"] = self.env["ir.sequence"].next_by_code(self._name)
+        sequence = "{0}_{1}".format(self._name, vals["invoice_type"])
+        vals["name"] = self.env["ir.sequence"].next_by_code(sequence)
         vals["writter"] = "Invoice created by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
         return super(Invoice, self).create(vals)
