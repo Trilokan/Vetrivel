@@ -35,6 +35,7 @@
         "sequence/stores.xml",
         "sequence/asserts.xml",
         "sequence/purchase.xml",
+        "sequence/order.xml",
         "sequence/invoice.xml",
 
         # Account
@@ -125,8 +126,8 @@
         "views/stock/store_return.xml",
         "views/stock/store_accept.xml",
         "views/stock/arc_move.xml",
-        "views/stock/material_in.xml",
-        "views/stock/material_out.xml",
+        "views/stock/material_transact_in.xml",
+        "views/stock/material_transact_out.xml",
         "views/configuration/store_config.xml",
 
         # Asserts
@@ -137,13 +138,19 @@
 
         # Purchase
         "views/purchase/indent.xml",
-        "views/purchase/direct_purchase.xml",
 
-        # Sales
-        "views/sales/sale_order.xml",
+        # Order
+        "views/order/purchase_order.xml",
+        "views/order/purchase_return.xml",
+        "views/order/sales_order.xml",
+        "views/order/sales_return.xml",
 
         # Invoice
         "views/invoice/invoice.xml",
+        "views/invoice/purchase_invoice.xml",
+        "views/invoice/purchase_return_invoice.xml",
+        "views/invoice/sales_invoice.xml",
+        "views/invoice/sales_return_invoice.xml",
 
         # Hospital
         "views/hospital/ward.xml",

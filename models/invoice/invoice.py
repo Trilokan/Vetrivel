@@ -27,6 +27,7 @@ class Invoice(models.Model):
     invoice_detail = fields.One2many(comodel_name="invoice.detail", inverse_name="invoice_id")
     progress = fields.Selection(selection=PROGRESS_INFO, default="draft")
     invoice_type = fields.Selection(selection=INVOICE_TYPE, string="Invoice Type", required=True)
+    order_id = fields.Many2one(comodel_name="arc.order", string="Order")
 
     # Calculation
     sub_total_amount = fields.Float(string="Sub Total", required=True, readonly=True, default=0.0)
@@ -40,18 +41,6 @@ class Invoice(models.Model):
     un_tax_amount = fields.Float(string="Un-Tax Amount", required=True, readonly=True, default=0.0)
     discount_amount = fields.Float(string="Discount Amount", required=True, readonly=True, default=0.0)
     pf = fields.Float(string="PF Amount", required=True, readonly=True, default=0.0)
-
-    # # Purchase
-    # po_id = fields.Many2one(comodel_name="", string="")
-    dpo_id = fields.Many2one(comodel_name="direct.purchase", string="Purchase Order")
-    # purchase_quote_id = fields.Many2one(comodel_name="", string="")
-    #
-    # # Sale
-    # so_id = ""
-    # sale_quote_id = ""
-    #
-    # # Inventory
-    # inventory_id = ""
 
     expected_delivery = fields.Char(string='Expected Delivery')
     freight = fields.Char(string='Freight')

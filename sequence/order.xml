@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+
+        <!-- Order : arc.order_sales -->
+        <record id="arc_order_sales_sequence" model="ir.sequence">
+            <field name="name">Order Sales</field>
+            <field name="code">arc.order_sales</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Order : arc.order_sales_return -->
+        <record id="arc_order_sales_return_sequence" model="ir.sequence">
+            <field name="name">Order Sales Return</field>
+            <field name="code">arc.order_sales_return</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Order : arc.order_purchase -->
+        <record id="arc_order_purchase_sequence" model="ir.sequence">
+            <field name="name">Order Purchase</field>
+            <field name="code">arc.order_purchase</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Order : arc.order_purchase_return -->
+        <record id="arc_order_purchase_return_sequence" model="ir.sequence">
+            <field name="name">Order Purchase Return</field>
+            <field name="code">arc.order_purchase_return</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Order : order.detail -->
+        <record id="order_detail_sequence" model="ir.sequence">
+            <field name="name">Order Detail</field>
+            <field name="code">order.detail</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+    </data>
+
+</odoo>

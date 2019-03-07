@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields
+from odoo import models, fields, api
 
 PROGRESS_INFO = [("draft", "Draft"), ("confirmed", "Confirmed"), ("approved", "Approved")]
 
@@ -8,7 +8,9 @@ PROGRESS_INFO = [("draft", "Draft"), ("confirmed", "Confirmed"), ("approved", "A
 class InvoiceDetail(models.Model):
     _name = "invoice.detail"
 
-    ref_id = fields.Char(string="Reference")
+    order_ref = fields.Char(string="Order Reference")
+    material_ref = fields.Char(string="Material Reference")
+    name = fields.Char(string="Name")
     product_id = fields.Many2one(comodel_name="arc.product", string="Product")
     description = fields.Text(string="Description")
     uom_id = fields.Many2one(comodel_name="product.uom", string="UOM", related="product_id.uom_id")
@@ -43,3 +45,8 @@ class InvoiceDetail(models.Model):
                                                         state_type)
 
         self.write(vals)
+
+    @api.model
+    def create(self, vals):
+        vals["name"] = self.env["ir.sequence"].next_by_code(self._name)
+        return super(InvoiceDetail, self).create(vals)

@@ -141,7 +141,12 @@
                             <!-- Content-->
                             <div class="card-header">
                                 <div class="card-header__avatar">
-                                    <img t-attf-src="data:image/png;base64, #{record.image.value}" class="oe_module_icon"/>
+                                    <t t-if="record.image.value">
+                                        <img t-attf-src="data:image/png;base64, #{record.image.value}" class="oe_module_icon"/>
+                                    </t>
+                                    <t t-else="">
+                                        <img t-attf-src="/web/static/src/img/placeholder.png" class="oe_module_icon"/>
+                                    </t>
                                 </div>
                             </div>
                             <div class="card-content">

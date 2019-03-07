@@ -209,12 +209,71 @@
         </field>
     </record>
 
+    <!-- Kanban -->
+    <record id="view_hr_employee_kanban" model="ir.ui.view">
+        <field name="name">hr.employee.kanban</field>
+        <field name="model">hr.employee</field>
+        <field name="arch" type="xml">
+            <kanban create="false">
+                <field name="image"/>
+                <field name="name"/>
+                <field name="employee_uid"/>
+                <field name="mobile"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="department_id"/>
+                <field name="designation_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click card">
+
+                            <!-- Header -->
+                            <!-- Content-->
+                            <div class="card-header">
+                                <div class="card-header__avatar">
+                                    <t t-if="record.image.value">
+                                        <img t-attf-src="data:image/png;base64, #{record.image.value}" class="oe_module_icon"/>
+                                    </t>
+                                    <t t-else="">
+                                        <img t-attf-src="/web/static/src/img/placeholder.png" class="oe_module_icon"/>
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-content__username"><h5>Employee Name</h5><field name="name"/></div>
+                                <div class="card-content__username"><h5>Employee ID</h5><field name="employee_uid"/></div>
+                                <div class="card-content__bio"><h5>Designation</h5><field name="designation_id"/></div>
+                                <div class="card-content__bio"><h5>Mobile</h5><field name="mobile"/></div>
+                                <div class="card-content__bio"><h5>Phone</h5><field name="phone"/></div>
+                                <div class="card-content__bio"><h5>Email</h5><field name="email"/></div>
+                            </div>
+                            <!-- Footer-->
+                            <div class="card-footer">
+                                <div class="card-footer__pens">
+                                    <span><field name="doj"/></span> <div class="label">DOJ</div>
+                                </div>
+                                <div class="card-footer__followers">
+                                    <span><field name="age"/></span> <div class="label">Age</div>
+                                </div>
+                                <div class="card-footer__following">
+                                    <span><field name="department_id"/></span> <div class="label">Department</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </t>
+              </templates>
+            </kanban>
+        </field>
+    </record>
+
+
     <!-- Action -->
     <record id="action_hr_employee" model="ir.actions.act_window">
         <field name="name">Employee</field>
         <field name="res_model">hr.employee</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,form,tree</field>
     </record>
 
 </odoo>

@@ -113,6 +113,36 @@
             <field name="number_increment">1</field>
         </record>
 
+        <!-- Stock : material.transact.in -->
+        <record id="material_transact_in_sequence" model="ir.sequence">
+            <field name="name">Material Transact In</field>
+            <field name="code">material.transact.in</field>
+            <field name="prefix">MTI/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Stock : material.transact.out -->
+        <record id="material_transact_out_sequence" model="ir.sequence">
+            <field name="name">Material Transact Out</field>
+            <field name="code">material.transact.out</field>
+            <field name="prefix">MTO/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- Stock : transact.detail -->
+        <record id="transact_detail_sequence" model="ir.sequence">
+            <field name="name">Transact Detail</field>
+            <field name="code">transact.detail</field>
+            <field name="prefix">TD/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
     </data>
 
 </odoo>

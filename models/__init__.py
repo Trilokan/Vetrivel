@@ -17,4 +17,5 @@ from . import purchase
 from . import sales
 from . import hospital
 from . import doctor
+from . import order
 from . import invoice

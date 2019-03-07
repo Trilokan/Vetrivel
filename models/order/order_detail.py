@@ -2,18 +2,16 @@
 
 from odoo import models, fields, api
 
-PROGRESS_INFO = [("draft", "Draft"),
-                 ("confirmed", "Confirmed"),
-                 ("approved", "Approved"),
-                 ("cancel", "Cancel")]
+PROGRESS_INFO = [("draft", "Draft"), ("confirmed", "Confirmed"), ("approved", "Approved")]
 
 
-class DirectPurchaseItem(models.Model):
-    _name = "direct.purchase.item"
+class OrderDetail(models.Model):
+    _name = "order.detail"
 
-    name = fields.Char(string="Name", readonly=True)
-    product_id = fields.Many2one(comodel_name="arc.product", string="Product", required=True)
-    description = fields.Text(string="Description", required=True)
+    quote_ref = fields.Char(string="Quote Reference")
+    name = fields.Char(string="Name")
+    product_id = fields.Many2one(comodel_name="arc.product", string="Product")
+    description = fields.Text(string="Description")
     uom_id = fields.Many2one(comodel_name="product.uom", string="UOM", related="product_id.uom_id")
     quantity = fields.Float(string="Quantity", required=True, default=0.0)
     unit_price = fields.Float(string="Unit Price", required=True, default=0.0)
@@ -27,8 +25,8 @@ class DirectPurchaseItem(models.Model):
     sgst = fields.Float(string="SGST", required=True, readonly=True, default=0.0)
     igst = fields.Float(string="IGST", required=True, readonly=True, default=0.0)
     total = fields.Float(string="Total", required=True, readonly=True, default=0.0)
-    order_id = fields.Many2one(comodel_name="direct.purchase", string="Invoice")
-    progress = fields.Selection(selection=PROGRESS_INFO, string="Progress", related="order_id.progress")
+    order_id = fields.Many2one(comodel_name="arc.order", string="Order")
+    progress = fields.Selection(selection=PROGRESS_INFO,  string="Progress", related="order_id.progress")
 
     def update_total(self):
         state = self.order_id.person_id.state_id.id
@@ -50,4 +48,4 @@ class DirectPurchaseItem(models.Model):
     @api.model
     def create(self, vals):
         vals["name"] = self.env["ir.sequence"].next_by_code(self._name)
-        return super(DirectPurchaseItem, self).create(vals)
+        return super(OrderDetail, self).create(vals)
