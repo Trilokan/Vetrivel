@@ -3,7 +3,6 @@
 from odoo import models, fields
 from datetime import datetime
 
-REMINDER_TYPE = [("email", "E-mail"), ("sms", "SMS")]
 CURRENT_DATE = datetime.now().strftime("%Y-%m-%d")
 CURRENT_TIME = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 CURRENT_INDIA = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
@@ -17,6 +16,9 @@ class HRReminder(models.Model):
     person_id = fields.Many2one(comodel_name="arc.person", string="Person",
                                 default=lambda self: self.env.user.person_id.id,
                                 required=True)
-    remind_type = fields.Selection(selection=REMINDER_TYPE, default="email", required=True)
     remind_on = fields.Datetime(string="Remind On", required=True)
+    is_remind = fields.Boolean(string="Is Remind", readonly=True)
     message = fields.Text(string="Message", required=True)
+
+    def cron_trigger_remind(self):
+        self.is_remind = True

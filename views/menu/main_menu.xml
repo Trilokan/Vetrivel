@@ -26,5 +26,11 @@
     <menuitem id="menu_account" name="Account" sequence="100"/>
     <menuitem id="menu_report" name="Reporting" sequence="200"/>
 
+    <menuitem id="menu_school" name="School" sequence="110"/>
+    <menuitem id="menu_academic" name="Academic" parent="menu_school" sequence="10"/>
+    <menuitem id="menu_syllabus" name="Syllabus" parent="menu_school" sequence="20"/>
+    <menuitem id="menu_exam" name="Exam" parent="menu_school" sequence="30"/>
+
+
 
 </odoo>

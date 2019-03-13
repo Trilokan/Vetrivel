@@ -10,8 +10,8 @@
                 <field name="date"/>
                 <field name="remind_on"/>
                 <field name="person_id"/>
-                <field name="remind_type"/>
                 <field name="message"/>
+                <field name="is_remind"/>
             </tree>
         </field>
     </record>
@@ -29,8 +29,8 @@
                     <group col="4">
                         <field name="date"/>
                         <field name="person_id"/>
-                        <field name="remind_type"/>
                         <field name="remind_on"/>
+                        <field name="is_remind"/>
                     </group>
                     <field name="message" placeholder="Message..."/>
                 </sheet>

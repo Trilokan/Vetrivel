@@ -9,9 +9,9 @@ CURRENT_INDIA = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
 
 # Bed
-class ArcBed(models.Model):
-    _name = "arc.bed"
+class BedStatus(models.TransientModel):
+    _name = "bed.status"
 
-    name = fields.Char(string="Bed", required=True)
-    bed_uid = fields.Char(string="Code", required=True)
-    ward_id = fields.Many2one(comodel_name="arc.ward", string="Ward")
+    wards_count = ""
+    beds_count = ""
+    occupied_count = ""

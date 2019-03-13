@@ -19,3 +19,9 @@ from . import hospital
 from . import doctor
 from . import order
 from . import invoice
+from . import ward
+
+from . import school
+from . import student
+from . import curriculum
+from . import academic

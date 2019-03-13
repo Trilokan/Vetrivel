@@ -3,7 +3,7 @@
 from odoo import fields, models, api, exceptions, _
 from datetime import datetime, timedelta
 
-ACCOUNT_TYPE = [("draft", "Draft"), ("registered", "Registered")]
+PAYMENT_MODE = [("")]
 PAYMENT_TYPE = [("cash", "Cash"), ("bank", "Bank")]
 PROGRESS_INFO = [("un_posted", "Un Posted"), ("posted", "Posted")]
 CURRENT_DATE = datetime.now().strftime("%Y-%m-%d")
@@ -19,11 +19,12 @@ class RegisterPayment(models.Model):
     date = fields.Date(string="Date", required=True, default=CURRENT_DATE)
     name = fields.Char(string="Name", readonly=True)
     person_id = fields.Many2one(comodel_name="arc.person", string="Person", required=True)
-    account_type = fields.Selection(selection=ACCOUNT_TYPE, string="Account Type", required=True)
-    payment_type = fields.Selection(selection=PAYMENT_TYPE, stringh="Payment Type", required=True)
+    account_id = fields.Many2one(comodel_name="arc.person", string="Person", required=True)
     invoice_id = fields.Many2one(comodel_name="arc.invoice", string="Invoice")
-    amount = fields.Float(string="Amount")
     note_id = fields.Many2one(comodel_name="journal.item", string="Note")
+    display = fields.Html(string="Display")
+    amount = fields.Float(string="Amount")
+
     progress = fields.Selection(selection=PROGRESS_INFO, string="Progress", default="draft")
 
     @api.model

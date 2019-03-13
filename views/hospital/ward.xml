@@ -9,6 +9,7 @@
             <tree string="Ward">
                 <field name="name"/>
                 <field name="ward_uid"/>
+                <field name="supervisor_id"/>
             </tree>
         </field>
     </record>

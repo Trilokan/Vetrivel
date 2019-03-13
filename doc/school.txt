@@ -1,0 +1,84 @@
+School
+    Students
+        Admission
+        Transfer Certificate
+
+    Activities
+        Co-Curricular
+        Extra Curricular
+
+    Events
+        NSS
+        Sports Day
+        Republic Day
+
+    Actions
+        Complaints
+        Disciplinary Actions
+
+    Fees
+        Fees Structure
+        Payments
+        Donation
+        Reports
+
+    Infrastructure
+        Buildings Facility
+        Staffs
+        Labs Facility
+        Transportation Facility
+        Awards
+
+    Notice Board
+        Notice
+        Events
+
+    Configuration
+        Year
+        Standard
+        Section
+        Subject
+
+
+
+Academics
+    Academics
+        Academic
+        Standard
+        Section
+        Students
+        Parents Meeting
+        holidays
+
+    Syllabus
+        Syllabus
+        Model Questions
+
+    Exam
+        Monthly
+        Mid-Term
+        Quarterly
+        Half-yearly
+        Annual
+        Practicals
+        Report Card
+
+    Daily Activities
+        Test
+        Home Work
+
+    Question Bank
+        Questions
+
+Standards
+    I Standard
+    II Standard
+    III Standard
+
+
+
+
+Students
+
+
+

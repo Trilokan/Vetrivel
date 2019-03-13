@@ -160,7 +160,18 @@
         "views/hospital/doctor_timing.xml",
 
         # Appointment
-        "views/appointment/opt.xml",
+        # "views/appointment/opt.xml",
+
+        # School
+        "views/school/year.xml",
+        "views/school/standard.xml",
+        "views/school/section.xml",
+        "views/school/subject.xml",
+
+        # Academic
+        "views/academic/academic.xml",
+        "views/academic/standard.xml",
+        # "views/academic/section.xml",
 
         # Menu
         "views/menu/main_menu.xml",
@@ -179,6 +190,8 @@
 
         "views/menu/purchase.xml",
         "views/menu/hospital.xml",
+
+        "views/menu/school.xml",
 
     ],
     "demo": [

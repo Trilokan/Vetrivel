@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields
+from odoo import models, fields, api
 from datetime import datetime
 
 PROGRESS_INFO = [("draft", "Draft"), ("shifted", "Shifted")]
@@ -18,4 +18,11 @@ class PatientShifting(models.Model):
     person_id = fields.Many2one(comodel_name="arc.person", string="Person")
     from_bed_id = fields.Many2one(comodel_name="arc.bed", string="From")
     to_bed_id = fields.Many2one(comodel_name="arc.bed", string="To")
+    is_admitted = fields.Boolean(string="Admitted")
+    is_discharge = fields.Boolean(string="Discharge")
     progress = fields.Selection(selection=PROGRESS_INFO, default="draft")
+
+    @api.model
+    def create(self, vals):
+        vals["name"] = self.env["ir.sequence"].next_by_code(self._name)
+        return super(PatientShifting, self).create(vals)

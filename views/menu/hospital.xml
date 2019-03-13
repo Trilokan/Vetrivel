@@ -8,6 +8,5 @@
     <menuitem id="arc_hospital_hr_notes" name="Notes" action="action_hr_notes" parent="arc_hospital" sequence="30"/>
     <menuitem id="arc_hospital_hr_reminder" name="Reminder" action="action_hr_reminder" parent="arc_hospital" sequence="40"/>
     <menuitem id="arc_hospital_doctor_timings" name="Doctor Timings" action="action_doctor_timings" parent="arc_hospital" sequence="50"/>
-    <menuitem id="arc_hospital_hr_appointment_opt" name="OPT Appointment" action="action_hr_appointment_opt" parent="arc_hospital" sequence="50"/>
 
 </odoo>

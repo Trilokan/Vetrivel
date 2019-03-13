@@ -7,8 +7,8 @@ BLOOD_GROUP = [('a+', 'A+'), ('b+', 'B+'), ('ab+', 'AB+'), ('o+', 'O+'),
 GENDER = [('male', 'Male'), ('female', 'Female')]
 
 
-class StudentRegister(models.Model):
-    _name = "student.register"
+class SchoolStudent(models.Model):
+    _name = "school.student"
 
     name = fields.Char(string="Student", required=True)
     student_uid = fields.Char(string="Student ID", required=True)
@@ -17,7 +17,6 @@ class StudentRegister(models.Model):
     small_image = fields.Binary(string="Small Image")
     user_id = fields.Many2one(comodel_name="res.users", string="User")
     person_id = fields.Many2one(comodel_name="arc.person", string="Person")
-    student_id = fields.Many2one(comodel_name="arc.student", string="Student")
 
     # Contact Details
     email = fields.Char(string="e-Mail")

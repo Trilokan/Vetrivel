@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="view_arc_standard_tree" model="ir.ui.view">
+        <field name="name">arc.standard.tree</field>
+        <field name="model">arc.standard</field>
+        <field name="arch" type="xml">
+            <tree string="Standard">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_arc_standard_form" model="ir.ui.view">
+        <field name="name">arc.standard.form</field>
+        <field name="model">arc.standard</field>
+        <field name="arch" type="xml">
+            <form string="Standard">
+                <sheet>
+                    <div id="s_header">
+                        <h1>Standard</h1>
+                    </div>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <separator string="Sections"/>
+                    <field name="section_ids" mode="kanban" readonly="1">
+                        <kanban create="false">
+                            <field name="image"/>
+                            <field name="name"/>
+                            <field name="academic_id"/>
+                            <templates>
+                                <t t-name="kanban-box">
+                                    <div class="oe_kanban_global_click card">
+
+                                        <!-- Header -->
+                                        <!-- Content-->
+                                        <div class="card-header">
+                                            <div class="card-header__avatar">
+                                                <t t-if="record.image.value">
+                                                    <img t-attf-src="data:image/png;base64, #{record.image.value}" class="oe_module_icon"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <img t-attf-src="/web/static/src/img/placeholder.png" class="oe_module_icon"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        <div class="card-content">
+                                            <div class="card-content__username"><field name="name"/></div>
+                                            <div class="card-content__username"><field name="academic_id"/></div>
+                                            <!--<div class="card-content__bio"><field name="academic_uid"/></div>-->
+                                        </div>
+                                        <!-- Footer-->
+                                        <div class="card-footer">
+                                            <div class="card-footer__pens">
+                                                <span>231</span> <div class="label">Pens</div>
+                                            </div>
+                                            <div class="card-footer__followers">
+                                                <span>0</span> <div class="label">Followers</div>
+                                            </div>
+                                            <div class="card-footer__following">
+                                                <span>0</span> <div class="label">Following</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </t>
+                          </templates>
+                        </kanban>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="view_arc_standard_kanban" model="ir.ui.view">
+        <field name="name">view.arc.standard.kanban</field>
+        <field name="model">arc.standard</field>
+        <field name="arch" type="xml">
+            <kanban create="false">
+                <field name="image"/>
+                <field name="name"/>
+                <field name="academic_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click card">
+
+                            <!-- Header -->
+                            <!-- Content-->
+                            <div class="card-header">
+                                <div class="card-header__avatar">
+                                    <t t-if="record.image.value">
+                                        <img t-attf-src="data:image/png;base64, #{record.image.value}" class="oe_module_icon"/>
+                                    </t>
+                                    <t t-else="">
+                                        <img t-attf-src="/web/static/src/img/placeholder.png" class="oe_module_icon"/>
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-content__username"><field name="name"/></div>
+                                <div class="card-content__username"><field name="academic_id"/></div>
+                                <!--<div class="card-content__bio"><field name="standard_uid"/></div>-->
+                            </div>
+                            <!-- Footer-->
+                            <div class="card-footer">
+                                <div class="card-footer__pens">
+                                    <span>231</span> <div class="label">Pens</div>
+                                </div>
+                                <div class="card-footer__followers">
+                                    <span>0</span> <div class="label">Followers</div>
+                                </div>
+                                <div class="card-footer__following">
+                                    <span>0</span> <div class="label">Following</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </t>
+              </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <!-- Action -->
+    <record id="action_arc_standard" model="ir.actions.act_window">
+        <field name="name">Standard</field>
+        <field name="res_model">arc.standard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+</odoo>

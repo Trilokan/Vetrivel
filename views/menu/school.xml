@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Academic-->
+    <menuitem id="menu_academic_arc_academic" name="Academic" action="action_arc_academic" parent="menu_academic" sequence="10"/>
+    <menuitem id="menu_academic_arc_standard" name="Standard" action="action_arc_standard" parent="menu_academic" sequence="20"/>
+    <!--<menuitem id="menu_academic_arc_section" name="Standard" action="action_arc_section" parent="menu_academic" sequence="30"/>-->
+
+
+</odoo>
