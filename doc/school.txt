@@ -22,13 +22,6 @@ School
         Donation
         Reports
 
-    Infrastructure
-        Buildings Facility
-        Staffs
-        Labs Facility
-        Transportation Facility
-        Awards
-
     Notice Board
         Notice
         Events
@@ -47,7 +40,6 @@ Academics
         Standard
         Section
         Students
-        Parents Meeting
         holidays
 
     Syllabus
@@ -55,6 +47,7 @@ Academics
         Model Questions
 
     Exam
+        Time Table
         Monthly
         Mid-Term
         Quarterly
@@ -64,6 +57,7 @@ Academics
         Report Card
 
     Daily Activities
+        Attendance
         Test
         Home Work
 
