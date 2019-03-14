@@ -8,6 +8,7 @@
         <field name="arch" type="xml">
             <tree string="Subject">
                 <field name="name"/>
+                <field name="subject_uid"/>
             </tree>
         </field>
     </record>
@@ -22,9 +23,11 @@
                     <div id="s_header">
                         <h1>Subject</h1>
                     </div>
-                    <group>
+                    <group col="4">
                         <field name="name"/>
+                        <field name="subject_uid"/>
                     </group>
+                    <field name="description" placeholder="Description.."/>
                 </sheet>
             </form>
         </field>

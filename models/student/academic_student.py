@@ -17,3 +17,4 @@ class Student(models.Model):
     academic_id = fields.Many2one(comodel_name="arc.academic", string="Academic")
     standard_id = fields.Many2one(comodel_name="arc.standard", string="Standard")
     section_id = fields.Many2one(comodel_name="arc.section", string="Section")
+    activity_id = fields.Many2one(comodel_name="curricular.activity", string="Activity")

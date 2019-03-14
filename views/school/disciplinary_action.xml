@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="view_disciplinary_action_tree" model="ir.ui.view">
+        <field name="name">disciplinary.action.tree</field>
+        <field name="model">disciplinary.action</field>
+        <field name="arch" type="xml">
+            <tree string="Disciplinary Action">
+                <field name="date"/>
+                <field name="student_id"/>
+                <field name="complaints_by"/>
+                <field name="details"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_disciplinary_action_form" model="ir.ui.view">
+        <field name="name">disciplinary.action.form</field>
+        <field name="model">disciplinary.action</field>
+        <field name="arch" type="xml">
+            <form string="Disciplinary Action">
+                <sheet>
+                    <div id="s_header">
+                        <h1>Disciplinary Action</h1>
+                    </div>
+                     <div id="p_header">
+                        <field name="progress" widget="statusbar" style="float: right;padding: 20px;"/>
+                    </div>
+                    <h2><field name="name"/></h2>
+                    <group col="4">
+                        <field name="date" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
+                        <field name="student_id" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
+                        <field name="complaint_id" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
+                        <field name="complaints_by" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
+                        <field name="attachment_ids" attrs="{'readonly': [('progress', '=', 'confirmed')]}" widget="many2many_binary"/>
+                    </group>
+                    <separator string="Complaint Detail"/>
+                    <field name="details" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
+                    <footer>
+                        <button name="trigger_action_taken" string="Action Taken" type="object"
+                                attrs="{'invisible': [('progress', '!=', 'draft')]}"/>
+                    </footer>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_disciplinary_action" model="ir.actions.act_window">
+        <field name="name">Disciplinary Action</field>
+        <field name="res_model">disciplinary.action</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

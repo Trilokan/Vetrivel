@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="view_student_complaint_tree" model="ir.ui.view">
+        <field name="name">student.complaint.tree</field>
+        <field name="model">student.complaint</field>
+        <field name="arch" type="xml">
+            <tree string="Student Complaint">
+                <field name="date"/>
+                <field name="student_id"/>
+                <field name="complaints_by"/>
+                <field name="details"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_student_complaint_form" model="ir.ui.view">
+        <field name="name">student.complaint.form</field>
+        <field name="model">student.complaint</field>
+        <field name="arch" type="xml">
+            <form string="Student Complaint">
+                <sheet>
+                    <div id="s_header">
+                        <h1>Student Complaint</h1>
+                    </div>
+                     <div id="p_header">
+                        <field name="progress" widget="statusbar" style="float: right;padding: 20px;"/>
+                    </div>
+                    <h2><field name="name"/></h2>
+                    <group col="4">
+                        <field name="date" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
+                        <field name="student_id" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
+                        <field name="complaints_by" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
+                        <field name="attachment_ids" attrs="{'readonly': [('progress', '=', 'confirmed')]}" widget="many2many_binary"/>
+                    </group>
+                    <separator string="Student Complaint Detail"/>
+                    <field name="details" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
+                    <footer>
+                        <button name="trigger_confirm" string="Confirm" type="object"
+                                attrs="{'invisible': [('progress', '!=', 'draft')]}"/>
+                        <button name="trigger_cancel" string="Cancel" type="object"
+                                attrs="{'invisible': [('progress', '!=', 'draft')]}"/>
+                    </footer>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_student_complaint" model="ir.actions.act_window">
+        <field name="name">Student Complaint</field>
+        <field name="res_model">student.complaint</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

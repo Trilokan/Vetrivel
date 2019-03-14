@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!--Hospital-->
-    <menuitem id="arc_hospital" name="Hospital" parent="menu_hospital" sequence="10"/>
-    <menuitem id="arc_hospital_arc_ward" name="Ward" action="action_arc_ward" parent="arc_hospital" sequence="10"/>
-    <menuitem id="arc_hospital_arc_bed" name="Bed" action="action_arc_bed" parent="arc_hospital" sequence="20"/>
-    <menuitem id="arc_hospital_hr_notes" name="Notes" action="action_hr_notes" parent="arc_hospital" sequence="30"/>
-    <menuitem id="arc_hospital_hr_reminder" name="Reminder" action="action_hr_reminder" parent="arc_hospital" sequence="40"/>
-    <menuitem id="arc_hospital_doctor_timings" name="Doctor Timings" action="action_doctor_timings" parent="arc_hospital" sequence="50"/>
+    <!--Menu : Hospital-->
+    <menuitem id="hospital_hospital" name="Hospital Management" sequence="10"/>
+    <menuitem id="hospital_contact" name="Contact" sequence="20"/>
+    <menuitem id="hospital_doctor" name="Doctor" sequence="30"/>
+    <menuitem id="hospital_patient" name="Patient" sequence="40"/>
+    <menuitem id="hospital_employee" name="Employee" sequence="50"/>
+    <menuitem id="hospital_hr" name="Human Resources" sequence="60"/>
+    <menuitem id="hospital_inventory" name="Inventory" sequence="70"/>
+    <menuitem id="hospital_purchase" name="Purchase" sequence="80"/>
+    <menuitem id="hospital_pharmacy" name="Pharmacy" sequence="90"/>
+    <menuitem id="hospital_account" name="Accounts" sequence="100"/>
+    <menuitem id="hospital_report" name="Reporting" sequence="110"/>
 
 </odoo>

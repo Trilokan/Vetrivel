@@ -2,15 +2,13 @@ School
     Students
         Admission
         Transfer Certificate
+        Register
 
     Activities
         Co-Curricular
         Extra Curricular
-
-    Events
-        NSS
-        Sports Day
-        Republic Day
+        Registration--------
+        Attendance----------
 
     Actions
         Complaints
@@ -18,8 +16,8 @@ School
 
     Fees
         Fees Structure
-        Payments
-        Donation
+        Bills
+        Payment Register
         Reports
 
     Notice Board
@@ -40,11 +38,14 @@ Academics
         Standard
         Section
         Students
+        Circular
         holidays
 
     Syllabus
         Syllabus
         Model Questions
+        Question Bank
+        Exam Question Paper
 
     Exam
         Time Table
@@ -61,8 +62,6 @@ Academics
         Test
         Home Work
 
-    Question Bank
-        Questions
 
 Standards
     I Standard
@@ -70,9 +69,27 @@ Standards
     III Standard
 
 
-
-
 Students
+    Students
+        Dashboard
+        Events
+        Notice
+        Circular
+        Parents Teacher Meetings
+        Exams
+        Tests
+        Homework
+        Report Card
+        Syllabus
+        Fees
+        Attendance
+        Diary
+        Class Time Table
+        Exam Time Table
+        complaints
+        Disciplinary Actions
 
+    Question Bank
+        Questions
 
 

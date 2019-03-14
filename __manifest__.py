@@ -37,6 +37,8 @@
         "sequence/purchase.xml",
         "sequence/order.xml",
         "sequence/invoice.xml",
+        "sequence/school.xml",
+
 
         # Account
         "views/account/account.xml",
@@ -134,7 +136,7 @@
         "views/asserts/asserts_capitalisation.xml",
         "views/asserts/asserts.xml",
         "views/asserts/asserts_maintenance.xml",
-        "views/asserts/asserts_notification.xml",
+        "views/asserts/asserts_reminder.xml",
 
         # Purchase
         "views/purchase/indent.xml",
@@ -167,31 +169,25 @@
         "views/school/standard.xml",
         "views/school/section.xml",
         "views/school/subject.xml",
+        "views/school/notice.xml",
+        "views/school/events.xml",
+        "views/school/complaint.xml",
+        "views/school/disciplinary_action.xml",
+        "views/school/co_curricular.xml",
+        "views/school/extra_curricular.xml",
+        "views/school/admission.xml",
+        "views/school/transfer.xml",
+        "views/school/student.xml",
 
         # Academic
         "views/academic/academic.xml",
         "views/academic/standard.xml",
-        # "views/academic/section.xml",
+        "views/academic/section.xml",
+        "views/academic/student.xml",
 
         # Menu
-        "views/menu/main_menu.xml",
-        "views/menu/product.xml",
-        "views/menu/stores.xml",
-        "views/menu/asserts.xml",
-        "views/menu/account.xml",
-        "views/menu/contact.xml",
-        "views/menu/hr.xml",
-        "views/menu/time_management.xml",
-        "views/menu/leave_management.xml",
-        "views/menu/recruitment.xml",
-        "views/menu/hr_actions.xml",
-        "views/menu/payroll.xml",
-
-
-        "views/menu/purchase.xml",
-        "views/menu/hospital.xml",
-
         "views/menu/school.xml",
+        "views/menu/school_sub_menu.xml",
 
     ],
     "demo": [

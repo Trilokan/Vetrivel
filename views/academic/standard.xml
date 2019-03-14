@@ -22,12 +22,13 @@
                     <div id="s_header">
                         <h1>Standard</h1>
                     </div>
-                    <group>
+                    <group col="4">
                         <field name="name"/>
+                        <field name="academic_id"/>
                     </group>
                     <separator string="Sections"/>
                     <field name="section_ids" mode="kanban" readonly="1">
-                        <kanban create="false">
+                        <kanban>
                             <field name="image"/>
                             <field name="name"/>
                             <field name="academic_id"/>
@@ -79,7 +80,7 @@
         <field name="name">view.arc.standard.kanban</field>
         <field name="model">arc.standard</field>
         <field name="arch" type="xml">
-            <kanban create="false">
+            <kanban>
                 <field name="image"/>
                 <field name="name"/>
                 <field name="academic_id"/>

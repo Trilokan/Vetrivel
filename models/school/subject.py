@@ -6,7 +6,7 @@ from odoo import models, fields, api
 class SchoolSubject(models.Model):
     _name = "school.subject"
 
-    name = fields.Char(string="Section", required=True)
+    name = fields.Char(string="Subject", required=True)
     subject_uid = fields.Char(string="Code", required=True)
     description = fields.Text(string="Description")
 

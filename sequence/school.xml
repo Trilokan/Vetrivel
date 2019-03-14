@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+
+        <!-- School : school.notice -->
+        <record id="school_notice_sequence" model="ir.sequence">
+            <field name="name">Notice</field>
+            <field name="code">school.notice</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- School : school.event -->
+        <record id="school_event_sequence" model="ir.sequence">
+            <field name="name">Event</field>
+            <field name="code">school.event</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- School : student.complaint -->
+        <record id="student_complaint_sequence" model="ir.sequence">
+            <field name="name">Student Complaint</field>
+            <field name="code">student.complaint</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <!-- School : disciplinary.action -->
+        <record id="disciplinary_action_sequence" model="ir.sequence">
+            <field name="name">Disciplinary Actions</field>
+            <field name="code">disciplinary.action</field>
+            <field name="padding">6</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+    </data>
+
+</odoo>

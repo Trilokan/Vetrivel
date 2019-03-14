@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!--Academic-->
-    <menuitem id="menu_academic_arc_academic" name="Academic" action="action_arc_academic" parent="menu_academic" sequence="10"/>
-    <menuitem id="menu_academic_arc_standard" name="Standard" action="action_arc_standard" parent="menu_academic" sequence="20"/>
-    <!--<menuitem id="menu_academic_arc_section" name="Standard" action="action_arc_section" parent="menu_academic" sequence="30"/>-->
-
-
+    <!--Menu : School-->
+    <menuitem id="school_school" name="School" sequence="10"/>
+    <menuitem id="school_academic" name="Academics" sequence="20"/>
+    <menuitem id="school_standard" name="Standards" sequence="30"/>
+    <menuitem id="school_student" name="Students" sequence="40"/>
+    <menuitem id="school_hr" name="Human Resources" sequence="50"/>
+    <menuitem id="school_staff" name="Staff" sequence="60"/>
+    <menuitem id="school_inventory" name="Inventory" sequence="70"/>
+    <menuitem id="school_account" name="Accounts" sequence="80"/>
+    <menuitem id="school_report" name="Reporting" sequence="90"/>
+    
 </odoo>

@@ -27,7 +27,7 @@
                     </group>
                     <separator string="Standards"/>
                     <field name="standard_ids" mode="kanban" readonly="1">
-                        <kanban create="false">
+                        <kanban>
                             <field name="image"/>
                             <field name="name"/>
                             <field name="academic_id"/>
@@ -73,14 +73,63 @@
                 </sheet>
             </form>
         </field>
+
     </record>
+        <record id="view_arc_academic_kanban" model="ir.ui.view">
+        <field name="name">view.arc.academic.kanban</field>
+        <field name="model">arc.academic</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="image"/>
+                <field name="name"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click card">
+
+                            <!-- Header -->
+                            <!-- Content-->
+                            <div class="card-header">
+                                <div class="card-header__avatar">
+                                    <t t-if="record.image.value">
+                                        <img t-attf-src="data:image/png;base64, #{record.image.value}" class="oe_module_icon"/>
+                                    </t>
+                                    <t t-else="">
+                                        <img t-attf-src="/web/static/src/img/placeholder.png" class="oe_module_icon"/>
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-content__username"><field name="name"/></div>
+                                <!--<div class="card-content__username"><field name="academic_id"/></div>-->
+                                <!--<div class="card-content__bio"><field name="standard_uid"/></div>-->
+                            </div>
+                            <!-- Footer-->
+                            <div class="card-footer">
+                                <div class="card-footer__pens">
+                                    <span>231</span> <div class="label">Pens</div>
+                                </div>
+                                <div class="card-footer__followers">
+                                    <span>0</span> <div class="label">Followers</div>
+                                </div>
+                                <div class="card-footer__following">
+                                    <span>0</span> <div class="label">Following</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </t>
+              </templates>
+            </kanban>
+        </field>
+    </record>
+
 
     <!-- Action -->
     <record id="action_arc_academic" model="ir.actions.act_window">
         <field name="name">Academic</field>
         <field name="res_model">arc.academic</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
     </record>
 
 </odoo>

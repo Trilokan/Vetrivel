@@ -1,0 +1,33 @@
+Hospital Management
+    Hospitality
+        Admission
+        Discharge
+        Patient Register
+        Ambulance
+
+    Wards
+        Wards
+        Beds
+        Bed Status
+
+    Appointments
+        My Appointments
+        OPT
+        OT
+        Meetings
+
+    Operation
+        Operation
+        OT Booking
+        List Of Operation
+
+    Bills
+        Patient Bills
+        Purchase Bills
+        Pharmacy Bills
+        Service Bills
+        Other Bills
+
+
+    Configuration
+        Appointment Reason

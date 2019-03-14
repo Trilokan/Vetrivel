@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="view_arc_student_tree" model="ir.ui.view">
+        <field name="name">arc.student.tree</field>
+        <field name="model">arc.student</field>
+        <field name="arch" type="xml">
+            <tree string="Academic Student">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_arc_student_form" model="ir.ui.view">
+        <field name="name">arc.student.form</field>
+        <field name="model">arc.student</field>
+        <field name="arch" type="xml">
+            <form string="Academic Student">
+                <sheet>
+                    <div id="s_header">
+                        <h1>Academic Student</h1>
+                    </div>
+                    <group>
+                        <field name="name"/>
+                        <field name="student_uid"/>
+                        <field name="image"/>
+                        <field name="academic_id"/>
+                        <field name="standard_id"/>
+                        <field name="section_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_arc_student" model="ir.actions.act_window">
+        <field name="name">Academic Student</field>
+        <field name="res_model">arc.student</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

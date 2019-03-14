@@ -23,5 +23,4 @@ from . import ward
 
 from . import school
 from . import student
-from . import curriculum
 from . import academic

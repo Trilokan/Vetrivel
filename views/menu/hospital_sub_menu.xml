@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Menu : Hospital Management-->
+    <!--Menu : Hospital Management / -->
+    <menuitem id="school_school_student" name="Students" parent="school_school" sequence="10"/>
+
+</odoo>

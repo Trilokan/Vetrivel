@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Menu : School-->
+    <!--Menu : School / Students-->
+    <menuitem id="school_school_student" name="Students" parent="school_school" sequence="10"/>
+    <menuitem id="school_school_student_admission" name="Admission" action="action_school_admission" parent="school_school_student" sequence="10"/>
+    <menuitem id="school_school_student_transfer" name="Transfer Certificate" action="action_school_transfer" parent="school_school_student" sequence="20"/>
+    <menuitem id="school_school_student_register" name="Register" action="action_school_student" parent="school_school_student" sequence="30"/>
+
+    <!--Menu : School / Contact-->
+    <menuitem id="school_school_contact" name="Contacts" parent="school_school" sequence="20"/>
+    <menuitem id="school_school_contact_staff" name="Staffs" parent="school_school_contact" sequence="10"/>
+    <menuitem id="school_school_contact_student" name="Students" parent="school_school_contact" sequence="20"/>
+    <menuitem id="school_school_contact_driver" name="Driver" parent="school_school_contact" sequence="30"/>
+    <menuitem id="school_school_contact_vendor" name="Vendor" parent="school_school_contact" sequence="40"/>
+    <menuitem id="school_school_contact_service" name="Service" parent="school_school_contact" sequence="50"/>
+
+    <!--Menu : School / Activities-->
+    <menuitem id="school_school_activity" name="Activities" parent="school_school" sequence="30"/>
+    <menuitem id="school_school_activity_curricular_activity_co" name="Co-Curricular" action="action_curricular_activity_co" parent="school_school_activity" sequence="10"/>
+    <menuitem id="school_school_activity_curricular_activity_extra" name="Extra-Curricular" action="action_curricular_activity_extra" parent="school_school_activity" sequence="20"/>
+
+    <!--Menu : School / Actions-->
+    <menuitem id="school_school_action" name="Actions" parent="school_school" sequence="40"/>
+    <menuitem id="school_school_action_complaint" name="Complaints" action="action_student_complaint" parent="school_school_action" sequence="10"/>
+    <menuitem id="school_school_action_disciplinary_action" name="Disciplinary Actions" action="action_disciplinary_action" parent="school_school_action" sequence="20"/>
+
+    <!--&lt;!&ndash;Menu : School / Fees&ndash;&gt;-->
+    <!--<menuitem id="school_school_fee" name="Fees" parent="school_school" sequence="50"/>-->
+    <!--<menuitem id="school_school_fee_structure" name="Fees Structure" parent="school_school_fee" sequence="10"/>-->
+    <!--<menuitem id="school_school_fee_bill" name="Bills" parent="school_school_fee" sequence="20"/>-->
+    <!--<menuitem id="school_school_fee_payment" name="Payment Register" parent="school_school_fee" sequence="30"/>-->
+    <!--<menuitem id="school_school_fee_report" name="Report" parent="school_school_fee" sequence="40"/>-->
+
+    <!--Menu : School / Notice Board-->
+    <menuitem id="school_school_notice" name="Notice Board" parent="school_school" sequence="60"/>
+    <menuitem id="school_school_notice_notice" name="Notice" action="action_school_notice" parent="school_school_notice" sequence="10"/>
+    <menuitem id="school_school_notice_event" name="Events" action="action_school_event" parent="school_school_notice" sequence="20"/>
+
+    <!--Menu : School / Configuration-->
+    <menuitem id="school_school_configuration" name="Configuration" parent="school_school" sequence="70"/>
+    <menuitem id="school_school_year" name="Year" action="action_school_year" parent="school_school_configuration" sequence="10"/>
+    <menuitem id="school_school_standard" name="Standard" action="action_school_standard" parent="school_school_configuration" sequence="20"/>
+    <menuitem id="school_school_section" name="Section" action="action_school_section" parent="school_school_configuration" sequence="30"/>
+    <menuitem id="school_school_subject" name="Subject" action="action_school_subject" parent="school_school_configuration" sequence="40"/>
+
+    <!--Menu : Academics-->
+    <!--Menu : Academics / Academics-->
+    <menuitem id="school_academic_academic" name="Academics" parent="school_academic" sequence="10"/>
+    <menuitem id="school_academic_academic_academic" name="Academics" action="action_arc_academic" parent="school_academic_academic" sequence="10"/>
+    <menuitem id="school_academic_academic_standard" name="Standards" action="action_arc_standard" parent="school_academic_academic" sequence="20"/>
+    <menuitem id="school_academic_academic_section" name="Sections" action="action_arc_section" parent="school_academic_academic" sequence="30"/>
+    <menuitem id="school_academic_academic_student" name="Students" action="action_arc_student" parent="school_academic_academic" sequence="40"/>
+    <menuitem id="school_academic_academic_holiday" name="Holidays" parent="school_academic_academic" sequence="50"/>
+
+    <!--&lt;!&ndash;Menu : Academics / Syllabus&ndash;&gt;-->
+    <!--<menuitem id="school_academic_syllabus" name="Syllabus" parent="school_academic" sequence="20"/>-->
+    <!--<menuitem id="school_academic_syllabus_syllabus" name="Syllabus" parent="school_academic_syllabus" sequence="10"/>-->
+    <!--<menuitem id="school_academic_syllabus_model_questions" name="Model Questions" parent="school_academic_syllabus" sequence="20"/>-->
+    <!--<menuitem id="school_academic_syllabus_question_bank" name="Question Bank" parent="school_academic_syllabus" sequence="30"/>-->
+    <!--<menuitem id="school_academic_syllabus_exam_question_paper" name="Exam Question Paper" parent="school_academic_syllabus" sequence="40"/>-->
+
+    <!--&lt;!&ndash;Menu : Academics / Exams&ndash;&gt;-->
+    <!--<menuitem id="school_academic_exam" name="Exams" parent="school_academic" sequence="30"/>-->
+    <!--<menuitem id="school_academic_exam_time_table" name="Time Table" parent="school_academic_exam" sequence="10"/>-->
+    <!--<menuitem id="school_academic_exam_monthly" name="Monthly" parent="school_academic_exam" sequence="20"/>-->
+    <!--<menuitem id="school_academic_exam_mid_term" name="Mid-Term" parent="school_academic_exam" sequence="30"/>-->
+    <!--<menuitem id="school_academic_exam_quatearly" name="Quaterly" parent="school_academic_exam" sequence="40"/>-->
+    <!--<menuitem id="school_academic_exam_halferaly" name="Halfearly" parent="school_academic_exam" sequence="50"/>-->
+    <!--<menuitem id="school_academic_exam_annual" name="Annual" parent="school_academic_exam" sequence="60"/>-->
+    <!--<menuitem id="school_academic_exam_practical" name="Practicals" parent="school_academic_exam" sequence="70"/>-->
+    <!--<menuitem id="school_academic_exam_annual" name="Report Card" parent="school_academic_exam" sequence="80"/>-->
+
+    <!--&lt;!&ndash;Menu : Academics / Daily Activities&ndash;&gt;-->
+    <!--<menuitem id="school_academic_daily_activity" name="Daily Activities" parent="school_academic" sequence="40"/>-->
+    <!--<menuitem id="school_academic_daily_activity_attendance" name="Attendance" parent="school_academic_daily_activity" sequence="40"/>-->
+    <!--<menuitem id="school_academic_daily_activity_test" name="Tests" parent="school_academic_daily_activity" sequence="40"/>-->
+    <!--<menuitem id="school_academic_daily_activity_homework" name="Homework" parent="school_academic_daily_activity" sequence="40"/>-->
+
+    <!--&lt;!&ndash;Menu : Standards&ndash;&gt;-->
+    <!--&lt;!&ndash;Menu : Standards/ I Standard&ndash;&gt;-->
+    <!--&lt;!&ndash;Menu : Standards/ II Standard&ndash;&gt;-->
+    <!--&lt;!&ndash;Menu : Standards/ III Standard&ndash;&gt;-->
+    <!--&lt;!&ndash;Menu : Standards/ IV Standard&ndash;&gt;-->
+    <!--&lt;!&ndash;Menu : Standards/ V Standard&ndash;&gt;-->
+    <!--&lt;!&ndash;Menu : Standards/ VI Standard&ndash;&gt;-->
+    <!--&lt;!&ndash;Menu : Standards/ VII Standard&ndash;&gt;-->
+    <!--&lt;!&ndash;Menu : Standards/ VIII Standard&ndash;&gt;-->
+    <!--&lt;!&ndash;Menu : Standards/ IX Standard&ndash;&gt;-->
+    <!--&lt;!&ndash;Menu : Standards/ X Standard&ndash;&gt;-->
+    <!--&lt;!&ndash;Menu : Standards/ XI Standard&ndash;&gt;-->
+    <!--&lt;!&ndash;Menu : Standards/ XII Standard&ndash;&gt;-->
+
+    <!--Menu : Inventory-->
+    <!--Menu : Inventory / Product-->
+    <menuitem id="school_inventory_product" name="Product" parent="school_inventory" sequence="10"/>
+    <menuitem id="school_inventory_product_product" name="Product" action="action_arc_product" parent="school_inventory_product" sequence="10"/>
+    <menuitem id="school_inventory_product_product_group" name="Product Group" action="action_product_group" parent="school_inventory_product" sequence="20"/>
+    <menuitem id="school_inventory_product_product_sub_group" name="Product Sub-Group" action="action_product_sub_group" parent="school_inventory_product" sequence="30"/>
+    <menuitem id="school_inventory_product_product_uom" name="UOM" action="action_product_uom" parent="school_inventory_product" sequence="40"/>
+    <menuitem id="school_inventory_product_product_tax" name="Tax" action="action_product_tax" parent="school_inventory_product" sequence="50"/>
+    <menuitem id="school_inventory_product_product_category" name="Category" action="action_product_category" parent="school_inventory_product" sequence="60"/>
+
+    <!--Menu : Inventory / Stores-->
+    <menuitem id="school_inventory_store" name="Stores" parent="school_inventory" sequence="20"/>
+    <menuitem id="school_inventory_store_adjustment" name="Stock Adjustment" action="action_stock_adjustment" parent="school_inventory_store" sequence="10"/>
+    <menuitem id="school_inventory_store_request" name="Store Request" action="action_store_request" parent="school_inventory_store" sequence="20"/>
+    <menuitem id="school_inventory_store_issue" name="Store Issue" action="action_store_issue" parent="school_inventory_store" sequence="30"/>
+    <menuitem id="school_inventory_store_return" name="Store Return" action="action_store_return" parent="school_inventory_store" sequence="40"/>
+    <menuitem id="school_inventory_store_accept" name="Store Accept" action="action_store_accept" parent="school_inventory_store" sequence="50"/>
+    <menuitem id="school_inventory_store_move" name="Stock Move" action="action_arc_move" parent="school_inventory_store" sequence="50"/>
+    <menuitem id="school_inventory_store_location" name="Location" action="action_stock_location" parent="school_inventory_store" sequence="60"/>
+    <menuitem id="school_inventory_store_warehouse" name="Warehouse" action="action_stock_warehouse" parent="school_inventory_store" sequence="70"/>
+    <menuitem id="school_inventory_store_config" name="Configuration" action="action_store_config" parent="school_inventory_store" sequence="80"/>
+
+    <!--Menu : Inventory / Asserts-->
+    <menuitem id="school_inventory_assert" name="Asserts" parent="school_inventory" sequence="30"/>
+    <menuitem id="school_inventory_assert_capitalisation" name="Asserts Capitalisation" action="action_asserts_capitalisation" parent="school_inventory_assert" sequence="10"/>
+    <menuitem id="school_inventory_assert_assert" name="Asserts" action="action_arc_asserts" parent="school_inventory_assert" sequence="20"/>
+    <menuitem id="school_inventory_assert_maintenance" name="Asserts Maintenance" action="action_asserts_maintenance" parent="school_inventory_assert" sequence="30"/>
+    <menuitem id="school_inventory_assert_reminder" name="Asserts Reminder" action="action_asserts_reminder" parent="school_inventory_assert" sequence="40"/>
+
+    <!--Menu : Inventory / Purchase-->
+    <menuitem id="school_inventory_purchase" name="Purchase" parent="school_inventory" sequence="30"/>
+    <menuitem id="school_inventory_purchase_indent" name="Purchase Indent" parent="school_inventory_purchase" sequence="10"/>
+    <menuitem id="school_inventory_purchase_quotation" name="Quotation" parent="school_inventory_purchase" sequence="20"/>
+    <menuitem id="school_inventory_purchase_order" name="Purchase Order" parent="school_inventory_purchase" sequence="30"/>
+    <menuitem id="school_inventory_purchase_invoice" name="Invoice" parent="school_inventory_purchase" sequence="40"/>
+
+    <!--Menu : Accounts-->
+    <!--Menu : Accounts / Accounts-->
+    <menuitem id="school_account_account" name="Accounts" parent="school_account" sequence="10"/>
+    <menuitem id="school_account_account_account" name="Accounts" parent="school_account_account" sequence="30"/>
+    <menuitem id="school_account_account_period" name="Period" parent="school_account_account" sequence="30"/>
+    <menuitem id="school_account_account_journal_type" name="Journal Type" parent="school_account_account" sequence="30"/>
+
+    <menuitem id="school_account_journal" name="Journals" parent="school_account" sequence="20"/>
+    <menuitem id="school_account_journal_entry" name="Journal Entry" parent="school_account_journal" sequence="30"/>
+    <menuitem id="school_account_journal_item" name="Journal Items" parent="school_account_journal" sequence="30"/>
+    <menuitem id="school_account_journal_ledger" name="Ledger" parent="school_account_journal" sequence="30"/>
+    <menuitem id="school_account_journal_reconciliation" name="Reconciliation" parent="school_account_journal" sequence="30"/>
+
+    <menuitem id="school_account_payment" name="Payments Register" parent="school_account" sequence="30"/>
+    <menuitem id="school_account_payment_receive" name="Receive Payments" parent="school_account_payment" sequence="20"/>
+    <menuitem id="school_account_payment_pay" name="Pay Payments" parent="school_account_payment" sequence="20"/>
+
+    <!--Menu : Human Resources-->
+    <!--Menu : Human Resources / Employee-->
+    <menuitem id="school_hr_employee" name="Employees" parent="school_hr" sequence="10"/>
+    <menuitem id="school_hr_employee_employee" name="Employees" parent="school_hr_employee" sequence="10"/>
+    <menuitem id="school_hr_employee_employee" name="Department" parent="school_hr_employee" sequence="20"/>
+    <menuitem id="school_hr_employee_employee" name="Designation" parent="school_hr_employee" sequence="30"/>
+    <menuitem id="school_hr_employee_employee" name="Employee Type" parent="school_hr_employee" sequence="40"/>
+    <menuitem id="school_hr_employee_employee" name="Employee Category" parent="school_hr_employee" sequence="50"/>
+    <menuitem id="school_hr_employee_employee" name="Experience" parent="school_hr_employee" sequence="60"/>
+    <menuitem id="school_hr_employee_employee" name="Qualification" parent="school_hr_employee" sequence="70"/>
+    <menuitem id="school_hr_employee_employee" name="Identities" parent="school_hr_employee" sequence="80"/>
+
+    <!--Menu : Human Resources / Recruitment-->
+    <menuitem id="school_hr_recruitment" name="Recruitment" parent="school_hr" sequence="30"/>
+    <menuitem id="school_hr_recruitment_resume" name="Resume Bank" parent="school_hr_recruitment" sequence="10"/>
+    <menuitem id="school_hr_recruitment_vacancy_position" name="vacancy Position" parent="school_hr_recruitment" sequence="20"/>
+    <menuitem id="school_hr_recruitment_appointment_order" name="Appointment Order" parent="school_hr_recruitment" sequence="30"/>
+
+    <!--Menu : Human Resources / Employee Actions-->
+    <menuitem id="school_hr_employee_action" name="Employee Actions" parent="school_hr" sequence="30"/>
+    <menuitem id="school_hr_employee_action_hiring" name="Hiring" parent="school_hr_employee_action" sequence="10"/>
+    <menuitem id="school_hr_employee_action_promotion" name="Promotion" parent="school_hr_employee_action" sequence="20"/>
+    <menuitem id="school_hr_employee_action_complaint" name="Complaints" parent="school_hr_employee_action" sequence="30"/>
+    <menuitem id="school_hr_employee_action_action_taken" name="Action Taken" parent="school_hr_employee_action" sequence="40"/>
+    <menuitem id="school_hr_employee_action_resignation" name="Resignation" parent="school_hr_employee_action" sequence="50"/>
+
+    <!--Menu : Human Resources / Time Management-->
+    <menuitem id="school_hr_time" name="Time Management" parent="school_hr" sequence="40"/>
+    <menuitem id="school_hr_time_shift" name="Shift" parent="school_hr_time" sequence="10"/>
+    <menuitem id="school_hr_time_month_attendance" name="Monthly Attendance" parent="school_hr_time" sequence="10"/>
+    <menuitem id="school_hr_time_week_schedule" name="Week Schedule" parent="school_hr_time" sequence="10"/>
+    <menuitem id="school_hr_time_daily_attendance" name="Daily Attendance" parent="school_hr_time" sequence="10"/>
+    <menuitem id="school_hr_time_work_sheet" name="Work Sheet" parent="school_hr_time" sequence="10"/>
+    <menuitem id="school_hr_time_time_sheet" name="Time Sheet" parent="school_hr_time" sequence="10"/>
+    <menuitem id="school_hr_time_time_sheet_application" name="Time Sheet Application" parent="school_hr_time" sequence="10"/>
+    <menuitem id="school_hr_time_add_employee" name="Add Employee To Shift" parent="school_hr_time" sequence="10"/>
+    <menuitem id="school_hr_time_holiday_change" name="Holiday Change" parent="school_hr_time" sequence="10"/>
+    <menuitem id="school_hr_time_shift_change" name="Shift Change" parent="school_hr_time" sequence="10"/>
+
+    <!--Menu : Human Resources / Leave Management-->
+    <menuitem id="school_hr_leave" name="Leave Management" parent="school_hr" sequence="50"/>
+    <menuitem id="school_hr_leave_leave" name="Leave Application" parent="school_hr_leave" sequence="50"/>
+    <menuitem id="school_hr_leave_permission" name="Permission" parent="school_hr_leave" sequence="50"/>
+    <menuitem id="school_hr_leave_on_duty" name="On-Duty" parent="school_hr_leave" sequence="50"/>
+    <menuitem id="school_hr_leave_comp_off" name="Comp-Off" parent="school_hr_leave" sequence="50"/>
+    <menuitem id="school_hr_leave_type" name="Leave Type" parent="school_hr_leave" sequence="50"/>
+    <menuitem id="school_hr_leave_level" name="Leave Level" parent="school_hr_leave" sequence="50"/>
+    <menuitem id="school_hr_leave_config" name="Configuration" parent="school_hr_leave" sequence="50"/>
+
+    <!--Menu : Human Resources / Payroll-->
+    <menuitem id="school_hr_payroll" name="Payroll Management" parent="school_hr" sequence="60"/>
+    <menuitem id="school_hr_payroll_employee_pay" name="Employee Pay" parent="school_hr" sequence="10"/>
+    <menuitem id="school_hr_payroll_pay_update" name="Employee Pay Update" parent="school_hr" sequence="20"/>
+    <menuitem id="school_hr_payroll_payslip" name="Payslip" parent="school_hr" sequence="30"/>
+    <menuitem id="school_hr_payroll_generation" name="Payroll Generation" parent="school_hr" sequence="40"/>
+    <menuitem id="school_hr_payroll_salary_structure" name="Salary Structure" parent="school_hr" sequence="50"/>
+    <menuitem id="school_hr_payroll_salary_rule" name="Salary Rule" parent="school_hr" sequence="60"/>
+    <menuitem id="school_hr_payroll_salary_rule_slab" name="Salary Rule Slab" parent="school_hr" sequence="70"/>
+    <menuitem id="school_hr_payroll_salary_rule_code" name="Salary Rule Code" parent="school_hr" sequence="80"/>
+
+
+</odoo>
