@@ -9,8 +9,8 @@ CURRENT_TIME = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 CURRENT_TIME_INDIA = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
 
-class SchoolEvents(models.Model):
-    _name = "school.event"
+class ArcEvents(models.Model):
+    _name = "arc.event"
     _inherit = "mail.thread"
 
     date = fields.Date(string="Date", required=True)
@@ -26,15 +26,15 @@ class SchoolEvents(models.Model):
 
     @api.multi
     def trigger_confirm(self):
-        writter = "School Events confirm by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
+        writter = "Events confirm by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
         self.write({"progress": "confirmed", "writter": writter})
 
     @api.multi
     def trigger_cancel(self):
-        writter = "School Events cancel by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
+        writter = "Events cancel by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
         self.write({"progress": "cancel", "writter": writter})
 
     @api.model
     def create(self, vals):
         vals["event"] = self.env["ir.sequence"].next_by_code(self._name)
-        return super(SchoolEvents, self).create(vals)
+        return super(ArcEvents, self).create(vals)

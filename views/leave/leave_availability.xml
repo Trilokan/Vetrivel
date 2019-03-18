@@ -14,13 +14,7 @@
                     <group>
                         <field name="person_id"/>
                     </group>
-                    <field name="leave_detail" readonly="1">
-                        <tree editable="bottom">
-                            <field name="available_id" invisible="1"/>
-                            <field name="type_id"/>
-                            <field name="available"/>
-                        </tree>
-                    </field>
+                    <field name="leave_availability"/>
                 </sheet>
             </form>
         </field>

@@ -9,8 +9,8 @@ CURRENT_INDIA = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
 
 # Operation
-class OperationList(models.Model):
-    _name = "patient.operation"
+class ArcOperation(models.Model):
+    _name = "arc.operation"
 
     name = fields.Char(string="Operation", required=True)
     treatment_id = ""

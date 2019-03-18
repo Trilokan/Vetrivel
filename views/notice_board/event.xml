@@ -2,38 +2,44 @@
 <odoo>
 
     <!-- Tree -->
-    <record id="view_school_notice_tree" model="ir.ui.view">
-        <field name="name">school.notice.tree</field>
-        <field name="model">school.notice</field>
+    <record id="view_arc_event_tree" model="ir.ui.view">
+        <field name="name">arc.event.tree</field>
+        <field name="model">arc.event</field>
         <field name="arch" type="xml">
-            <tree string="Notice">
+            <tree string="Event">
                 <field name="date"/>
                 <field name="name"/>
-                <field name="notice"/>
+                <field name="event"/>
+                <field name="supervisor_id"/>
+                <field name="venue"/>
+                <field name="timings"/>
             </tree>
         </field>
     </record>
 
     <!-- Form -->
-    <record id="view_school_notice_form" model="ir.ui.view">
-        <field name="name">school.notice.form</field>
-        <field name="model">school.notice</field>
+    <record id="view_arc_event_form" model="ir.ui.view">
+        <field name="name">arc.event.form</field>
+        <field name="model">arc.event</field>
         <field name="arch" type="xml">
-            <form string="Notice">
+            <form string="Event">
                 <sheet>
                     <div id="s_header">
-                        <h1>Notice</h1>
+                        <h1>Event</h1>
                     </div>
-                     <div id="p_header">
+                    <div id="p_header">
                         <field name="progress" widget="statusbar" style="float: right;padding: 20px;"/>
                     </div>
                     <h2><field name="name"/></h2>
                     <group col="4">
                         <field name="date" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
-                        <field name="notice" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
+                        <field name="event" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
+                        <field name="supervisor_id" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
+                        <field name="venue" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
+                        <field name="timings" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
                         <field name="attachment_ids" attrs="{'readonly': [('progress', '=', 'confirmed')]}" widget="many2many_binary"/>
                     </group>
-                    <field name="notice_detail" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
+                    <field name="event_detail" attrs="{'readonly': [('progress', '=', 'confirmed')]}"/>
                     <footer>
                         <button name="trigger_confirm" string="Confirm" type="object"
                                 attrs="{'invisible': [('progress', '!=', 'draft')]}"/>
@@ -50,9 +56,9 @@
     </record>
 
     <!-- Action -->
-    <record id="action_school_notice" model="ir.actions.act_window">
-        <field name="name">Notice</field>
-        <field name="res_model">school.notice</field>
+    <record id="action_arc_event" model="ir.actions.act_window">
+        <field name="name">Event</field>
+        <field name="res_model">arc.event</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>

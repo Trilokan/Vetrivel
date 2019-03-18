@@ -44,7 +44,7 @@
                             <field name="email"/>
                             <field name="phone"/>
                             <field name="contact_position"/>
-                            <field name="vendor_type"/>
+                            <field name="person_type"/>
                         </group>
 
                         <!--Address-->

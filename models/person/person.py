@@ -2,6 +2,17 @@
 
 from odoo import models, fields, api, exceptions
 
+PERSON_TYPE = [('doctor', 'Doctor'),
+               ('nurse', 'Nurse'),
+               ('patient', 'Patient'),
+               ('staff', 'Staff'),
+               ('teacher', 'Teacher'),
+               ('patient', 'Patient'),
+               ('student', 'Student'),
+               ('supplier', 'Supplier'),
+               ('service', 'Service'),
+               ('driver', 'Driver')]
+
 
 class ArcPerson(models.Model):
     _name = "arc.person"
@@ -46,10 +57,10 @@ class ArcPerson(models.Model):
     # Filter
     is_employee = fields.Boolean(string="Is Employee")
     is_patient = fields.Boolean(string="Is Patient")
+    is_student = fields.Boolean(string="Is Student")
     is_vendor = fields.Boolean(string="Is Vendor")
 
-    employee_type = fields.Many2one(comodel_name="employee.type", string="Employee Type")
-    vendor_type = fields.Many2one(comodel_name="vendor.type", string="vendor Type")
+    person_type = fields.Selection(selection=PERSON_TYPE, string="Person Type")
 
     def get_account_id(self, invoice_type):
         account_id = False

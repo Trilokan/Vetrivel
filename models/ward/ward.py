@@ -12,9 +12,10 @@ CURRENT_INDIA = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 class ArcWard(models.Model):
     _name = "arc.ward"
 
-    name = fields.Char(string="Ward", required=True)
     image = fields.Binary(string="Image")
+    name = fields.Char(string="Ward", required=True)
     ward_uid = fields.Char(string="Code", required=True)
+    ward_detail = fields.Html(string="Ward Detail")
     bed_ids = fields.One2many(comodel_name="arc.bed", inverse_name="ward_id")
     bed_count = fields.Integer(string="Bed Count", compute="_get_bed_count")
     supervisor_id = fields.Many2one(comodel_name="arc.person", string="In-Charge")

@@ -25,8 +25,6 @@
         "views/assert_backend.xml",
 
         # Data
-        "data/vendor_type.xml",
-        "data/employee_type.xml",
 
         # Sequence
         "sequence/person.xml",
@@ -55,9 +53,9 @@
 
         # Person
         "views/person/person.xml",
-        "views/person/vendor_type.xml",
 
         # Contact
+        "views/contact/contact.xml",
         "views/contact/doctor.xml",
         "views/contact/nurse.xml",
         "views/contact/staff.xml",
@@ -65,7 +63,8 @@
         "views/contact/patient.xml",
         "views/contact/supplier.xml",
         "views/contact/service.xml",
-        "views/contact/others.xml",
+        "views/contact/student.xml",
+        "views/contact/teacher.xml",
 
         # Hr
         "views/hr/employee.xml",
@@ -77,6 +76,11 @@
         "views/hr/identities.xml",
         "views/hr/address.xml",
         "views/hr/qualification.xml",
+
+        # Recruitment
+        "views/recruitment/resume_bank.xml",
+        "views/recruitment/vacancy_position.xml",
+        "views/recruitment/appointment_order.xml",
 
         # Time management
         "views/time/shift.xml",
@@ -109,7 +113,18 @@
         "views/payroll/payslip.xml",
         "views/payroll/salary_rule.xml",
         "views/payroll/salary_rule_slab.xml",
+        "views/payroll/salary_rule_code.xml",
         "views/payroll/salary_structure.xml",
+
+        # HR Actions
+        "views/hr_action/hiring.xml",
+        "views/hr_action/promotion.xml",
+        "views/hr_action/complaint.xml",
+        "views/hr_action/resignation.xml",
+
+        # Notice Board
+        "views/notice_board/notice.xml",
+        "views/notice_board/event.xml",
 
         # Product
         "views/product/product.xml",
@@ -155,22 +170,29 @@
         "views/invoice/sales_return_invoice.xml",
 
         # Hospital
-        "views/hospital/ward.xml",
-        "views/hospital/bed.xml",
         "views/hospital/notes.xml",
         "views/hospital/reminder.xml",
         "views/hospital/doctor_timing.xml",
 
+        # Ward
+        "views/ward/ward.xml",
+        "views/ward/bed.xml",
+        "views/ward/patient_shifting.xml",
+        # "views/ward/bed_status.xml",
+
         # Appointment
-        # "views/appointment/opt.xml",
+        "views/appointment/appointment.xml",
+        "views/appointment/my_appointment.xml",
+        "views/appointment/opt.xml",
+        "views/appointment/ot.xml",
+        "views/appointment/meeting.xml",
+        "views/appointment/appointment_reason.xml",
 
         # School
         "views/school/year.xml",
         "views/school/standard.xml",
         "views/school/section.xml",
         "views/school/subject.xml",
-        "views/school/notice.xml",
-        "views/school/events.xml",
         "views/school/complaint.xml",
         "views/school/disciplinary_action.xml",
         "views/school/co_curricular.xml",
@@ -188,6 +210,8 @@
         # Menu
         "views/menu/school.xml",
         "views/menu/school_sub_menu.xml",
+        "views/menu/hospital.xml",
+        "views/menu/hospital_sub_menu.xml",
 
     ],
     "demo": [

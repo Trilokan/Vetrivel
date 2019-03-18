@@ -1,33 +1,253 @@
-Hospital Management
-    Hospitality
-        Admission
-        Discharge
-        Patient Register
-        Ambulance
+-----------------------------------------------------------------
+1. Hospital Management
+-----------------------------------------------------------------
 
-    Wards
-        Wards
-        Beds
-        Bed Status
-
+Hospitality
+    Admission
+    Discharge
+    Bed Status
+    OT Status
     Appointments
-        My Appointments
-        OPT
-        OT
-        Meetings
+    Ambulance
 
+Contact
+    Doctor
+    Patient
+    Nurse
+    Staff
+    Driver
+    Supplier
+    Service
+
+Register
+    Patients
+    Employees
+    Suppliers
+
+Bills
+    Patient Bills
+    Purchase Bills
+    Pharmacy Bills
+    Service Bills
+
+Notice Board
+    Notice
+    Events
+    Vacancy Position
+
+Configuration
+    Appointment Reason
+
+
+-----------------------------------------------------------------
+2. Patient
+-----------------------------------------------------------------
+
+Patient
+    Patient Register
+
+Out Patient Treatment
+    Appointment
+    General Treatment
+
+OPT-Specialisation
+    Dental
+    Ophthalmology
+
+In Patient Treatment
+    Treatment
     Operation
-        Operation
-        OT Booking
-        List Of Operation
+    Patient Shifting
+    notes
+    Reminder
 
-    Bills
-        Patient Bills
-        Purchase Bills
-        Pharmacy Bills
-        Service Bills
-        Other Bills
+Pharmacy
+    Prescription
+
+Billing
+    Patient Bills
+    Pharmacy Bills
+
+Operation
+    Operation
+    OT Status
+    List of Operation
+
+Ward
+    Ward
+    Bed
+    Bed Status
 
 
-    Configuration
-        Appointment Reason
+
+-----------------------------------------------------------------
+3. Employee
+-----------------------------------------------------------------
+
+Employee
+    Time Application
+    Shift Schedule
+    Attendance
+    Work Detail
+    Leave Application
+    Permission
+    On-Duty
+    Comp-Off
+    Leave Availability
+
+Appointment
+    My Appointment
+    OPT
+    OT
+    Meetings
+
+Notes
+    Notes
+    Reminder
+
+Notice Board
+    Notice
+    Events
+    Vacancy Position
+
+
+-----------------------------------------------------------------
+4. Human Resources
+-----------------------------------------------------------------
+
+Employee
+    Employee Register
+    ID Card--------------
+    Department
+    Designation
+    Employee Type
+    Employee Category
+    Identities
+    Qualification
+    Experience
+
+Recruitment---------------
+    Resume Bank
+    Vacancy Position
+    Appointment Order
+
+Time Management
+    Shift
+    Monthly Attendance
+    week Schedule
+    Daily Attendance
+    Work Sheet
+    Time Sheet
+    Time Sheet Application
+    Add Employee To Shift
+    Shift Change
+    Holiday Change
+    Time Configuration
+
+Leave Management
+    Leave Application
+    Permission
+    On-Duty
+    Comp-Off
+    Leave Level
+    Leave Type
+    Leave Availability-----
+    Leave Configuration
+
+Payroll
+    Employee Pay
+    Employee Pay Update
+    Payslip
+    Payroll Generation
+    Salary Structure
+    Salary Rule
+    Salary Rule Slab
+    Salary Rule Code
+
+Employee Actions------------
+    Hiring
+    Promotion
+    Complaints
+    Action Taken
+    Resignation
+
+-------------------------------------------------------
+5. Inventory
+---------------------------------------------------------
+
+Product
+    Product
+    Product Group
+    Product Sub-Group
+    Product Category
+    Unit Of Measure
+    Tax
+
+Stores
+    Stock Adjustment
+    Store Request
+    Store Issue
+    Store Return
+    Store Accept
+    Material Receipt
+    Material Delivery
+    Stock Move
+    Location
+    Warehouse
+
+Asserts
+    Assert Capitalisation
+    Assert
+    Assert Maintenance
+    Assert Reminder
+
+
+--------------------------------------------------------
+6. Purchase
+--------------------------------------------------------
+Purchase
+    Purchase Indent
+    Quotation
+    Quote Comparision
+    Purchase Order
+    Invoice
+
+--------------------------------------------------------
+7. Pharmacy
+--------------------------------------------------------
+
+--------------------------------------------------------
+8. Accounts
+--------------------------------------------------------
+
+Accounts
+    Accounts
+    Journal Type
+    Period
+
+Journals
+    Journal Entry
+    Journal Items
+    Reconciliation
+    Ledger
+
+Payments Register
+    To Pay
+    To Receive
+
+Report
+    Aged Balance
+    Cash Flow
+
+--------------------------------------------------------
+9. Reports
+--------------------------------------------------------
+
+
+
+
+
+
+
+
+

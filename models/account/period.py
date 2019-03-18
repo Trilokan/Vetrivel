@@ -20,6 +20,13 @@ class ArcPeriod(models.Model):
     is_month = fields.Boolean(string="Is Month", default=True)
     writter = fields.Text(string="Writter", track_visibility="always")
 
+    def get_month(self, date):
+        recs = self.env["arc.period"].search([])
+
+        for rec in recs:
+            if rec.end_date >= date >= rec.start_date:
+                return rec.id
+
     @api.multi
     def trigger_open(self):
         writter = "Period Open by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)

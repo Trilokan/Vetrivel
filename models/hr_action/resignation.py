@@ -3,7 +3,7 @@
 from odoo import models, fields, api, exceptions
 from datetime import datetime, timedelta
 
-PROGRESS_INFO = [('draft', 'Draft'), ('confirmed', 'Confirmed'), ("approved", "Approved")]
+PROGRESS_INFO = [('draft', 'Draft'), ('resigned', 'Resigned')]
 CURRENT_DATE = datetime.now().strftime("%Y-%m-%d")
 CURRENT_TIME = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 CURRENT_TIME_INDIA = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
@@ -18,20 +18,14 @@ class HRResignation(models.Model):
                                 domain="[('is_employee', '=', True)]", required=True)
     department_id = fields.Many2one(comodel_name="hr.department", string="Department", readonly=True)
     designation_id = fields.Many2one(comodel_name="hr.designation", string="Designation", readonly=True)
-    details = fields.Text(string="Resignation Details", required=True)
-    reason = fields.Many2one(comodel_name="hr.resignation.reason", required=True)
+    resignation_detail = fields.Html(string="Resignation Details", required=True)
     attachment_ids = fields.Many2many(comodel_name="ir.attachment", string="Attachment")
     approve_by = fields.Many2one(comodel_name="arc.person", string="Person", required=True)
     progress = fields.Selection(selection=PROGRESS_INFO, string="Progress", default="draft")
     writter = fields.Char(string="Writter", track_visibility="always")
 
     @api.multi
-    def trigger_confirm(self):
-        writter = "Resination confirm by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
-        self.write({"progress": "confirmed", "writter": writter})
-
-    @api.multi
-    def trigger_approve(self):
+    def trigger_resign(self):
         writter = "Resignation approve by {0} on {1}".format(self.env.user.name, CURRENT_TIME_INDIA)
         self.write({"progress": "approved", "writter": writter})
 

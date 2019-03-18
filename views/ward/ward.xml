@@ -28,10 +28,18 @@
                         <field name="name"/>
                         <field name="ward_uid"/>
                     </group>
-                    <field name="bed_ids">
-                        <field name="name"/>
-                        <field name="bed_uid"/>
-                    </field>
+                    <notebook>
+                        <page string="Bed">
+                            <field name="bed_ids">
+                                <field name="name"/>
+                                <field name="bed_uid"/>
+                            </field>
+                        </page>
+                        <page string="Ward Facility">
+                            <field name="ward_detail"/>
+                        </page>
+                    </notebook>
+
                 </sheet>
             </form>
         </field>

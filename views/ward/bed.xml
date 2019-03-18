@@ -29,6 +29,8 @@
                         <field name="bed_uid"/>
                         <field name="ward_id"/>
                     </group>
+                    <separator string="Bed Facility"/>
+                    <field name="bed_detail"/>
                 </sheet>
             </form>
         </field>

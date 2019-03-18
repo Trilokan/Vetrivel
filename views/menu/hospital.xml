@@ -3,15 +3,13 @@
 
     <!--Menu : Hospital-->
     <menuitem id="hospital_hospital" name="Hospital Management" sequence="10"/>
-    <menuitem id="hospital_contact" name="Contact" sequence="20"/>
-    <menuitem id="hospital_doctor" name="Doctor" sequence="30"/>
-    <menuitem id="hospital_patient" name="Patient" sequence="40"/>
-    <menuitem id="hospital_employee" name="Employee" sequence="50"/>
-    <menuitem id="hospital_hr" name="Human Resources" sequence="60"/>
-    <menuitem id="hospital_inventory" name="Inventory" sequence="70"/>
-    <menuitem id="hospital_purchase" name="Purchase" sequence="80"/>
-    <menuitem id="hospital_pharmacy" name="Pharmacy" sequence="90"/>
-    <menuitem id="hospital_account" name="Accounts" sequence="100"/>
-    <menuitem id="hospital_report" name="Reporting" sequence="110"/>
+    <menuitem id="hospital_patient" name="Patient" sequence="20"/>
+    <menuitem id="hospital_employee" name="Employee" sequence="30"/>
+    <menuitem id="hospital_hr" name="Human Resources" sequence="40"/>
+    <menuitem id="hospital_inventory" name="Inventory" sequence="50"/>
+    <menuitem id="hospital_purchase" name="Purchase" sequence="60"/>
+    <menuitem id="hospital_pharmacy" name="Pharmacy" sequence="70"/>
+    <menuitem id="hospital_account" name="Accounts" sequence="80"/>
+    <menuitem id="hospital_report" name="Reporting" sequence="90"/>
 
 </odoo>

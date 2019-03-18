@@ -13,18 +13,26 @@ class LeaveAvailability(models.TransientModel):
     _name = "leave.availability"
 
     person_id = fields.Many2one(comodel_name="arc.person", string="Employee")
-    leave_detail = fields.One2many(comodel_name="leave.availability.detail", inverse_name="available_id")
+    leave_availability = fields.Html(string="Leave Availability", readonly=True)
 
     @api.onchange("person_id")
     def onchange_person_id(self):
         if self.person_id.id:
             employee_id = self.env["hr.employee"].search([("person_id", "=", self.person_id.id)])
-            pass
+            self.leave_availability = self.get_leave_availability()
 
+    def get_leave_availability(self):
+        config = self.env["leave.config"].search([("company_id", "=", self.env.user.company_id.id)])
+        template = config.leave_availability_template
 
-class LeaveAvailabilityDetail(models.TransientModel):
-    _name = "leave.availability.detail"
+        data = ""
+        period_id = self.env["arc.period"].get_month(CURRENT_DATE)
 
-    available_id = fields.Many2one(comodel_name="leave.availability", string="Leave Type")
-    type_id = fields.Many2one(comodel_name="leave.type", string="Leave Type")
-    available = fields.Float(string="Available")
+        if period_id:
+            recs = self.env["leave.details"].search([("work_id.month_id.period_id", "=", period_id.id)])
+
+            for rec in recs:
+                data = "{0}<tr><th>{1}</th><th>{2}</th></tr>".format(data, rec.type_id.name, rec.opening)
+
+        return template.format(data)
+

@@ -9,8 +9,8 @@ CURRENT_TIME = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 CURRENT_TIME_INDIA = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
 
-class SchoolNotice(models.Model):
-    _name = "school.notice"
+class ArcNotice(models.Model):
+    _name = "arc.notice"
     _inherit = "mail.thread"
 
     date = fields.Date(string="Date", required=True)
@@ -34,5 +34,5 @@ class SchoolNotice(models.Model):
     @api.model
     def create(self, vals):
         vals["notice"] = self.env["ir.sequence"].next_by_code(self._name)
-        return super(SchoolNotice, self).create(vals)
+        return super(ArcNotice, self).create(vals)
 

@@ -4,6 +4,7 @@ from odoo import models, fields, api
 from datetime import datetime
 
 PROGRESS_INFO = [("draft", "Draft"), ("shifted", "Shifted")]
+SHIFT_TYPE = [("internal", "Internal"), ("admission", "Admission"), ("discharge", "Discharge")]
 CURRENT_DATE = datetime.now().strftime("%Y-%m-%d")
 CURRENT_TIME = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 CURRENT_INDIA = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
@@ -18,8 +19,7 @@ class PatientShifting(models.Model):
     person_id = fields.Many2one(comodel_name="arc.person", string="Person")
     from_bed_id = fields.Many2one(comodel_name="arc.bed", string="From")
     to_bed_id = fields.Many2one(comodel_name="arc.bed", string="To")
-    is_admitted = fields.Boolean(string="Admitted")
-    is_discharge = fields.Boolean(string="Discharge")
+    shift_type = fields.Selection(selection=SHIFT_TYPE, string="Shifting")
     progress = fields.Selection(selection=PROGRESS_INFO, default="draft")
 
     @api.model

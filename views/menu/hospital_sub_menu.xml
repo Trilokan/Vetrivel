@@ -1,8 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!--Menu : Hospital Management-->
-    <!--Menu : Hospital Management / -->
-    <menuitem id="school_school_student" name="Students" parent="school_school" sequence="10"/>
+    <!--Menu : Hospital-->
+    <!--Menu : Hospital / Hospitality-->
+    <menuitem id="hospital_hospital_hospitality" name="Hospitality" parent="hospital_hospital" sequence="60"/>
+    <menuitem id="hospital_hospital_hospitality_admission" name="Admission" parent="hospital_hospital_hospitality" sequence="10"/>
+    <menuitem id="hospital_hospital_hospitality_discharge" name="Discharge" parent="hospital_hospital_hospitality" sequence="20"/>
+    <menuitem id="hospital_hospital_hospitality_appointment" name="Appointments" action="action_arc_appointment" parent="hospital_hospital_hospitality" sequence="30"/>
+    <menuitem id="hospital_hospital_hospitality_bed_status" name="Bed Status" parent="hospital_hospital_hospitality" sequence="40"/>
+    <menuitem id="hospital_hospital_hospitality_ot_status" name="OT Status" parent="hospital_hospital_hospitality" sequence="50"/>
+    <menuitem id="hospital_hospital_hospitality_ambulance" name="Ambulance" parent="hospital_hospital_hospitality" sequence="60"/>
+
+    <!--Menu : Hospital / Contact-->
+    <menuitem id="hospital_hospital_contact" name="Contacts" parent="hospital_hospital" sequence="20"/>
+    <menuitem id="hospital_hospital_contact_patient" name="Patient" action="action_arc_person_student" parent="hospital_hospital_contact" sequence="10"/>
+    <menuitem id="hospital_hospital_contact_doctor" name="Doctor" action="action_arc_person_teacher" parent="hospital_hospital_contact" sequence="20"/>
+    <menuitem id="hospital_hospital_contact_nurse" name="Nurse" action="action_arc_person_teacher" parent="hospital_hospital_contact" sequence="30"/>
+    <menuitem id="hospital_hospital_contact_staff" name="Staffs" action="action_arc_person_service" parent="hospital_hospital_contact" sequence="40"/>
+    <menuitem id="hospital_hospital_contact_driver" name="Drivers" action="action_arc_person_driver" parent="hospital_hospital_contact" sequence="50"/>
+    <menuitem id="hospital_hospital_contact_supplier" name="Suppliers" action="action_arc_person_supplier" parent="hospital_hospital_contact" sequence="60"/>
+    <menuitem id="hospital_hospital_contact_service" name="Services" action="action_arc_person_service" parent="hospital_hospital_contact" sequence="70"/>
+
+    <!--Menu : Hospital / Register-->
+    <menuitem id="hospital_hospital_register" name="Register" parent="hospital_hospital" sequence="30"/>
+    <menuitem id="hospital_hospital_register_patient" name="Patients" parent="hospital_hospital_register" sequence="10"/>
+    <menuitem id="hospital_hospital_register_staff" name="Staffs" action="action_hr_employee" parent="hospital_hospital_register" sequence="20"/>
+    <menuitem id="hospital_hospital_register_supplier" name="Suppliers" action="action_arc_person" parent="hospital_hospital_register" sequence="30"/>
+
+    <!--Menu : Hospital / Bills-->
+    <menuitem id="hospital_hospital_bill" name="Bills" parent="hospital_hospital" sequence="40"/>
+    <menuitem id="hospital_hospital_bill_patient" name="Patient Bills" parent="hospital_hospital_bill" sequence="10"/>
+    <menuitem id="hospital_hospital_bill_purchase" name="Purchase Bills" parent="hospital_hospital_bill" sequence="20"/>
+    <menuitem id="hospital_hospital_bill_pharmacy" name="Pharmacy Bills" parent="hospital_hospital_bill" sequence="30"/>
+    <menuitem id="hospital_hospital_bill_service" name="Service Bills" parent="hospital_hospital_bill" sequence="40"/>
+
+    <!--Menu : Hospital / Configuration-->
+    <menuitem id="hospital_hospital_config" name="Configuration" parent="hospital_hospital" sequence="10"/>
+    <menuitem id="hospital_hospital_config_appointment_reason" name="Appointment Reason" action="action_appointment_reason" parent="hospital_hospital_config" sequence="10"/>
+
+
+    <!--Menu : Hospital / Notice Board-->
+    <menuitem id="hospital_hospital_notice" name="Notice Board" parent="hospital_hospital" sequence="60"/>
+    <menuitem id="hospital_hospital_notice_notice" name="Notice" parent="hospital_hospital_notice" sequence="10"/>
+    <menuitem id="hospital_hospital_notice_event" name="Events" parent="hospital_hospital_notice" sequence="20"/>
+    <menuitem id="hospital_hospital_notice_vacancy" name="Vacancy Position" parent="hospital_hospital_notice" sequence="30"/>
+
+    <!--Menu : Hospital / Appointments-->
+    <menuitem id="hospital_hospital_appointment" name="Appointments" parent="hospital_hospital" sequence="10"/>
+    <menuitem id="hospital_hospital_appointment_appointment" name="My Appointments" action="action_arc_appointment_my" parent="hospital_hospital_appointment" sequence="10"/>
+    <menuitem id="hospital_hospital_appointment_opt" name="OPT" action="action_arc_appointment_opt" parent="hospital_hospital_appointment" sequence="10"/>
+    <menuitem id="hospital_hospital_appointment_ot" name="OT" action="action_arc_appointment_ot" parent="hospital_hospital_appointment" sequence="10"/>
+    <menuitem id="hospital_hospital_appointment_meeting" name="Meetings" action="action_arc_appointment_meeting" parent="hospital_hospital_appointment" sequence="10"/>
+
 
 </odoo>

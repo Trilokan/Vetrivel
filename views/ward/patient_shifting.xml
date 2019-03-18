@@ -10,10 +10,9 @@
                 <field name="date"/>
                 <field name="name"/>
                 <field name="person_id"/>
-                <field name="is_admitted"/>
-                <field name="is_discharge"/>
                 <field name="from_bed_id"/>
                 <field name="to_bed_id"/>
+                <field name="shift_type"/>
                 <field name="progress"/>
             </tree>
         </field>
@@ -29,14 +28,16 @@
                     <div id="s_header">
                         <h1>Patient Shifting</h1>
                     </div>
+                    <div id="p_header">
+                        <field name="progress" widget="statusbar" style="float: right;padding: 20px;"/>
+                    </div>
                     <group>
                         <field name="date"/>
                         <field name="name"/>
                         <field name="person_id"/>
-                        <field name="is_admitted"/>
-                        <field name="is_discharge"/>
                         <field name="from_bed_id"/>
                         <field name="to_bed_id"/>
+                        <field name="shift_type"/>
                     </group>
                 </sheet>
             </form>

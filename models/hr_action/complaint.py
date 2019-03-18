@@ -9,8 +9,8 @@ CURRENT_TIME = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 CURRENT_TIME_INDIA = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
 
-class HRComplaints(models.Model):
-    _name = "hr.complaints"
+class HRComplaint(models.Model):
+    _name = "hr.complaint"
     _inherit = "mail.thread"
 
     name = fields.Char(string="Name", readonly=True)
@@ -19,7 +19,8 @@ class HRComplaints(models.Model):
                                 domain="[('is_employee', '=', True)]", required=True)
     department_id = fields.Many2one(comodel_name="hr.department", string="Department", readonly=True)
     designation_id = fields.Many2one(comodel_name="hr.designation", string="Designation", readonly=True)
-    details = fields.Text(string="Complaint Details", required=True)
+    complaint_details = fields.Html(string="Complaint Details", required=True)
+    action_taken_details = fields.Html(string="Action Taken", required=True)
     attachment_ids = fields.Many2many(comodel_name="ir.attachment", string="Attachment")
     complaints_by = fields.Many2one(comodel_name="arc.person", string="Complaints By", required=True)
     progress = fields.Selection(selection=PROGRESS_INFO, string="Progress", default="draft")
@@ -38,4 +39,4 @@ class HRComplaints(models.Model):
         vals["department_id"] = employee_id.department_id.id
         vals["designation_id"] = employee_id.designation_id.id
 
-        return super(HRComplaints, self).create(vals)
+        return super(HRComplaint, self).create(vals)

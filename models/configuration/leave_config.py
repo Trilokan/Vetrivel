@@ -12,3 +12,4 @@ class LeaveConfig(models.Model):
     co_id = fields.Many2one(comodel_name="leave.type", string="Comp-Off")
     company_id = fields.Many2one(comodel_name="res.company", string="Company",
                                  default=lambda self: self.env.user.company_id.id)
+    leave_availability_template = fields.Html(string="Leave Availability Template")

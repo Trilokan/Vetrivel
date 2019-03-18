@@ -27,6 +27,7 @@
                         <field name="lop_id"/>
                         <field name="co_id"/>
                     </group>
+                    <field name="leave_availability_template"/>
                 </sheet>
             </form>
         </field>

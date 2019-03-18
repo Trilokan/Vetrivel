@@ -11,8 +11,8 @@ CURRENT_INDIA = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
 
 # Appointment
-class HRAppointment(models.Model):
-    _name = "hr.appointment"
+class ARCAppointment(models.Model):
+    _name = "arc.appointment"
     _inherit = "mail.thread"
     
     date = fields.Date(string="Date", default=CURRENT_DATE, required=True)
@@ -23,11 +23,19 @@ class HRAppointment(models.Model):
     appointment_type = fields.Selection(selection=APPOINTMENT_TYPE, default="opt", required=True)
     appointment_for = fields.Many2one(comodel_name="arc.person", string="Person")
     reason = fields.Many2one(comodel_name="appointment.reason", string="Reason")
-    operation_id = fields.Many2one(comodel_name="patient.operation", string="Operation")
+    operation_id = fields.Many2one(comodel_name="arc.operation", string="Operation")
     comment = fields.Text(string="Comment")
     progress = fields.Selection(selection=PROGRESS_INFO, string="Progress")
     attachment_ids = fields.Many2many(comodel_name="ir.attachment", string="Attachment")
+    writter = fields.Text(string="Writter", track_visibility="always")
 
     @api.model
     def create(self, vals):
-        pass
+        sequence = "{0}.{1}".format(self._name, vals["appointment_type"])
+        vals["name"] = self.env["ir.sequence"].next_by_code(sequence)
+        return super(ARCAppointment, self).create(vals)
+
+    @api.multi
+    def trigger_cancel(self):
+        writter = "Appointment cancel by {0}".format(self.env.user.name)
+        self.write({"progress": "cancel", "writter": writter})

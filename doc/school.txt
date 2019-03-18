@@ -1,95 +1,259 @@
+---------------------------------------------------------
+1. School Management
+---------------------------------------------------------
 School
-    Students
-        Admission
-        Transfer Certificate
-        Register
-
-    Activities
-        Co-Curricular
-        Extra Curricular
-        Registration--------
-        Attendance----------
-
-    Actions
-        Complaints
-        Disciplinary Actions
-
-    Fees
-        Fees Structure
-        Bills
-        Payment Register
-        Reports
-
-    Notice Board
-        Notice
-        Events
-
-    Configuration
-        Year
-        Standard
-        Section
-        Subject
-
-
-
-Academics
+    Admission
+    Transfer Certificate
     Academics
-        Academic
-        Standard
-        Section
-        Students
-        Circular
-        holidays
+    Student Register
+    Academic Register
 
+Contact
+    Students
+    Teachers
+    Staffs
+    Drivers
+    Suppliers
+    Services
+
+Register
+    Students
+    Staffs
+    Suppliers
+
+Events
+    Event Registration
+    Participants
+    Awards
+
+Fees
+    Fee Structure
+    Bills
+    Payment Register
+    Reports
+
+Bills
+    Student Bills
+    Purchase Bills
+    Service Bills
+
+Notice Board
+    Notice
+    Events
+    Vacancy Position
+
+Configuration
+    Year
+    Standard
+    Section
+    Subject
+
+
+------------------------------------------------
+2. Academics
+------------------------------------------------
+Academics
+    Academic
+    Standard
+    Section
+    Students
+    Circular
+    holidays
+
+Syllabus
     Syllabus
-        Syllabus
-        Model Questions
-        Question Bank
-        Exam Question Paper
+    Model Questions
+    Question Bank
+    Exam Question Paper
 
-    Exam
-        Time Table
-        Monthly
-        Mid-Term
-        Quarterly
-        Half-yearly
-        Annual
-        Practicals
-        Report Card
+Exam
+    Time Table
+    Monthly
+    Mid-Term
+    Quarterly
+    Half-yearly
+    Annual
+    Practicals
+    Report Card
 
-    Daily Activities
-        Attendance
-        Test
-        Home Work
+Daily Activities
+    Attendance
+    Test
+    Home Work
+
+Actions
+    Complaints
+    Disciplinary Actions
 
 
-Standards
-    I Standard
-    II Standard
-    III Standard
+---------------------------------------------
+3. Standards
+---------------------------------------------
+I Standard
+II Standard
+III Standard
 
+
+---------------------------------------------
+4. Students
+---------------------------------------------
 
 Students
-    Students
-        Dashboard
-        Events
-        Notice
-        Circular
-        Parents Teacher Meetings
-        Exams
-        Tests
-        Homework
-        Report Card
-        Syllabus
-        Fees
-        Attendance
-        Diary
-        Class Time Table
-        Exam Time Table
-        complaints
-        Disciplinary Actions
+    Dashboard
+    Events
+    Notice
+    Circular
+    Parents Teacher Meetings
+    Exams
+    Tests
+    Homework
+    Report Card
+    Syllabus
+    Fees
+    Attendance
+    Diary
+    Class Time Table
+    Exam Time Table
+    complaints
+    Disciplinary Actions
 
-    Question Bank
-        Questions
+Question Bank
+    Questions
+    Model Questions
+    Exam Question Paper
+
+------------------------------------------------
+5. Staff
+------------------------------------------------
+
+
+
+
+-----------------------------------------------------------------
+6. Human Resources
+-----------------------------------------------------------------
+
+Employee
+    Employee Register
+    ID Card--------------
+    Department
+    Designation
+    Employee Type
+    Employee Category
+    Identities
+    Qualification
+    Experience
+
+Recruitment---------------
+    Resume Bank
+    Vacancy Position
+    Appointment Order
+
+Time Management
+    Shift
+    Monthly Attendance
+    week Schedule
+    Daily Attendance
+    Work Sheet
+    Time Sheet
+    Time Sheet Application
+    Add Employee To Shift
+    Shift Change
+    Holiday Change
+    Time Configuration
+
+Leave Management
+    Leave Application
+    Permission
+    On-Duty
+    Comp-Off
+    Leave Level
+    Leave Type
+    Leave Availability-----
+    Leave Configuration
+
+Payroll
+    Employee Pay
+    Employee Pay Update
+    Payslip
+    Payroll Generation
+    Salary Structure
+    Salary Rule
+    Salary Rule Slab
+    Salary Rule Code
+
+Employee Actions------------
+    Hiring
+    Promotion
+    Complaints
+    Action Taken
+    Resignation
+
+
+-------------------------------------------------------
+7. Inventory
+---------------------------------------------------------
+
+Product
+    Product
+    Product Group
+    Product Sub-Group
+    Product Category
+    Unit Of Measure
+    Tax
+
+Stores
+    Stock Adjustment
+    Store Request
+    Store Issue
+    Store Return
+    Store Accept
+    Material Receipt
+    Material Delivery
+    Stock Move
+    Location
+    Warehouse
+
+Asserts
+    Assert Capitalisation
+    Assert
+    Assert Maintenance
+    Assert Reminder
+
+Purchase
+    Purchase Indent
+    Quotation
+    Quote Comparision
+    Purchase Order
+    Invoice
+
+--------------------------------------------------------
+8. Accounts
+--------------------------------------------------------
+
+Accounts
+    Accounts
+    Journal Type
+    Period
+
+Journals
+    Journal Entry
+    Journal Items
+    Reconciliation
+    Ledger
+
+Payments Register
+    To Pay
+    To Receive
+
+Report
+    Aged Balance
+    Cash Flow
+
+--------------------------------------------------------
+9. Reports
+--------------------------------------------------------
+
+
 
 
