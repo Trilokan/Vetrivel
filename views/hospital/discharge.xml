@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="view_patient_addis_discharge_tree" model="ir.ui.view">
+        <field name="name">patient.addis.discharge.tree</field>
+        <field name="model">patient.addis</field>
+        <field name="arch" type="xml">
+            <tree string="patient Discharge">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_patient_addis_discharge_form" model="ir.ui.view">
+        <field name="name">patient.addis.discharge.form</field>
+        <field name="model">patient.addis</field>
+        <field name="arch" type="xml">
+            <form string="patient Discharge">
+                <sheet>
+                    <div id="s_header">
+                        <h1>patient Discharge</h1>
+                    </div>
+
+                    <div>
+                        <field name="image" widget="image" class="oe_avatar oe_left" modifiers="{}"/>
+                    </div>
+                    <div style="margin-left: 100px;">
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" class="oe_inline" modifiers="{'required': true}"/>
+                            </h1>
+                            <h2><field name="patient_id"/></h2>
+                        </div>
+                    </div>
+
+                    <group col="4" string="Treatment">
+                        <field name="treatment_id"/>
+                        <field name="bed_id"/>
+                    </group>
+
+                    <group col="4" string="Contacts">
+                        <field name="contact_person"/>
+                        <field name="contact_mobile"/>
+                        <field name="contact_phone"/>
+                        <field name="contact_address"/>
+                    </group>
+                    <group col="4" string="Admission Detail">
+                        <field name="discharge_date"/>
+                        <field name="discharge_reason"/>
+                        <field name="discharge_reason_detail"/>
+                        <field name="discharge_comment"/>
+                        <field name="discharge_attachment_ids"/>
+                        <field name="discharge_by"/>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_patient_addis_discharge" model="ir.actions.act_window">
+        <field name="name">patient Discharge</field>
+        <field name="res_model">patient.addis</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_patient_addis_discharge_tree"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="action_patient_addis_discharge_form">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_patient_addis_discharge_form"/>
+        <field name="act_window_id" ref="action_patient_addis_discharge"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="action_patient_addis_discharge_tree">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_patient_addis_discharge_tree"/>
+        <field name="act_window_id" ref="action_patient_addis_discharge"/>
+    </record>
+
+
+</odoo>

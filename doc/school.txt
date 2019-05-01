@@ -62,7 +62,6 @@ Academics
 
 Syllabus
     Syllabus
-    Model Questions
     Question Bank
     Exam Question Paper
 
@@ -125,6 +124,26 @@ Question Bank
 ------------------------------------------------
 5. Staff
 ------------------------------------------------
+
+Employee
+    Time Application
+    Shift Schedule
+    Attendance
+    Work Detail
+    Leave Application
+    Permission
+    On-Duty
+    Comp-Off
+    Leave Availability
+
+Notes
+    Notes
+    Reminder
+
+Notice Board
+    Notice
+    Events
+    Vacancy Position
 
 
 

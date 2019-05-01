@@ -137,6 +137,41 @@
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click card">
 
+                        <!-- User Card-->
+                        <div class="card">
+                            <!-- Header -->
+                            <div class="card-header">
+                                <div class="card-header__avatar">
+                                    <t t-if="record.image.value">
+                                        <img t-attf-src="data:image/png;base64, #{record.image.value}" class="oe_module_icon"/>
+                                    </t>
+                                    <t t-else="">
+                                        <img t-attf-src="/web/static/src/img/placeholder.png" class="oe_module_icon"/>
+                                    </t>
+                                </div>
+                            </div>
+
+                            <!-- Content-->
+                            <div class="card-content">
+                                <div class="card-content__username">CodePen <field name="name"/></div>
+                                <div class="card-content__bio">Demo or it didn't happen.</div>
+                            </div>
+
+                            <!-- Footer-->
+                            <div class="card-footer">
+                                <div class="card-footer__pens"> <span>231</span>
+                                    <div class="label">Pens</div>
+                                </div>
+                                <div class="card-footer__followers"> <span>0</span>
+                                    <div class="label">Followers</div>
+                                </div>
+                                <div class="card-footer__following"> <span>0</span>
+                                    <div class="label">Following</div>
+                                </div>
+                            </div>
+                        </div>
+
+
                             <!-- Header -->
                             <!-- Content-->
                             <div class="card-header">

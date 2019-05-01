@@ -37,6 +37,8 @@ Notice Board
 
 Configuration
     Appointment Reason
+    Admission Reason
+    Discharge Reason
 
 
 -----------------------------------------------------------------
@@ -45,28 +47,23 @@ Configuration
 
 Patient
     Patient Register
+    Admission
+    Discharge
 
 Out Patient Treatment
     Appointment
     General Treatment
-
-OPT-Specialisation
     Dental
     Ophthalmology
+    Prescription
 
 In Patient Treatment
     Treatment
     Operation
     Patient Shifting
+    Prescription
     notes
     Reminder
-
-Pharmacy
-    Prescription
-
-Billing
-    Patient Bills
-    Pharmacy Bills
 
 Operation
     Operation
@@ -77,7 +74,6 @@ Ward
     Ward
     Bed
     Bed Status
-
 
 
 -----------------------------------------------------------------
@@ -216,6 +212,24 @@ Purchase
 7. Pharmacy
 --------------------------------------------------------
 
+Pharmacy
+    Prescription
+    Sale Order
+    Invoice
+    Register Payment
+
+Product
+    Product
+    Product Group
+    Product Sub-Group
+
+Inventory
+    Purchase Indent
+    Store Request
+    Store Return
+    Material Delivery
+    Stock Report
+
 --------------------------------------------------------
 8. Accounts
 --------------------------------------------------------
@@ -236,6 +250,7 @@ Payments Register
     To Receive
 
 Report
+    Chart Of Accounts
     Aged Balance
     Cash Flow
 

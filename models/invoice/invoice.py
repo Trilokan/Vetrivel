@@ -49,9 +49,8 @@ class Invoice(models.Model):
     certificate = fields.Char(string='Certificate')
     warranty = fields.Char(string='Warranty')
 
-    #
-    # # Accounting
-    # journal_items = ""
+    # Accounting
+    journal_items = fields.One2many(comodel_name="journal.item", inverse_name="invoice_id")
 
     @api.multi
     def trigger_confirm(self):
@@ -122,7 +121,6 @@ class Invoice(models.Model):
         recs = self.invoice_detail
 
         data = {"date": self.date,
-                "invoice_id": self.id,
                 "journal_type_id": self.get_journal_type_id(),
                 "person_id": self.person_id.id}
 
@@ -190,6 +188,7 @@ class Invoice(models.Model):
                                                       self.person_id.name)
         item = {"account_id": self.person_id.get_account_id(self.invoice_type),
                 "description": description,
+                "invoice_id": self.id,
                 "credit": amount["debit"],
                 "debit": amount["credit"]}
         item.update(data)

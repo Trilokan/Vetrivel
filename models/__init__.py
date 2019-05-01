@@ -21,7 +21,7 @@ from . import doctor
 from . import order
 from . import invoice
 from . import ward
-
+from . import operation
 from . import hr_action
 from . import notice_board
 from . import appointment

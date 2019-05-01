@@ -17,7 +17,8 @@ class Section(models.Model):
     boys_count = fields.Integer(string="Students", compute="_get_boys_count")
     girls_count = fields.Integer(string="Students", compute="_get_girls_count")
 
-    student_ids = fields.One2many(comodel_name="arc.student", inverse_name="section_id")
+    student_ids = fields.Many2many(comodel_name="arc.student", inverse_name="section_id")
+
 
     def _get_students_count(self):
         for rec in self:

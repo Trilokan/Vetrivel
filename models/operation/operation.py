@@ -18,9 +18,8 @@ class ArcOperation(models.Model):
     assistant_ids = fields.Many2many(comodel_name="arc.person", string="Assistants", required=True)
     is_account_approved = ""
     is_procedure_completed = ""
-    date = ""
-    operation_date = ""
-    ot_id = ""
+    date = fields.Date(string="Date")
+    ot_id = fields.Many2one(comodel_name="operation.theater", string="Operation Theater")
     operation_list_id = ""
     attachment_ids = ""
 

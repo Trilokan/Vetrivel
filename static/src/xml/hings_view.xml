@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+<t t-name="FormRenderingwin">
+    <div class="o_form_win_bg">
+        <div t-attf-class="o_form_win #{classnames}"/>
+    </div>
+</t>
+
+</templates>

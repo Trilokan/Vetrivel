@@ -21,8 +21,6 @@ class JournalItem(models.Model):
     description = fields.Text(string="Description")
     credit = fields.Float(string="Credit", required=True, default=0.0)
     debit = fields.Float(string="Debit", required=True, default=0.0)
-    full_reconcile_id = fields.Many2one(comodel_name="arc.reconcile", string="Full Reconcile")
-    part_reconcile_id = fields.Many2one(comodel_name="arc.reconcile", string="Part Reconcile")
     journal_id = fields.Many2one(comodel_name="arc.journal", string="Journal Entry")
     progress = fields.Selection(selection="", string="Progress", related="journal_id.progress")
 

@@ -207,10 +207,6 @@
         "views/invoice/sales_invoice.xml",
         "views/invoice/sales_return_invoice.xml",
 
-        # Register Payment
-        "views/register_payment/to_pay.xml",
-        # "views/register_payment/to_receive.xml",
-
         # Menu
         "views/menu/hospital.xml",
         "views/menu/hospital_sub_menu.xml",
@@ -220,7 +216,7 @@
 
     ],
     "qweb": [
-        "static/src/xml/hings_view.xml",
+
     ],
     "installable": True,
     "auto_install": False,

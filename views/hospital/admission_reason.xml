@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="view_addis_reason_admission_tree" model="ir.ui.view">
+        <field name="name">addis.reason.admission.tree</field>
+        <field name="model">addis.reason</field>
+        <field name="arch" type="xml">
+            <tree string="Admission Reason">
+                <field name="name"/>
+                <field name="is_admission" invisible="1"/>
+                <field name="is_discharge" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_addis_reason_admission_form" model="ir.ui.view">
+        <field name="name">addis.reason.admission.form</field>
+        <field name="model">addis.reason</field>
+        <field name="arch" type="xml">
+            <form string="Admission Reason">
+                <sheet>
+                    <div id="s_header">
+                        <h1>Admission Reason</h1>
+                    </div>
+                    <group col="4">
+                        <field name="name" colspan="3"/>
+                        <field name="is_admission" invisible="1"/>
+                        <field name="is_discharge" invisible="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_addis_reason_admission" model="ir.actions.act_window">
+        <field name="name">Admission Reason</field>
+        <field name="res_model">addis.reason</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_admission', '=', True)]</field>
+        <field name="view_id" ref="view_addis_reason_admission_tree"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="action_addis_reason_admission_form">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_addis_reason_admission_form" />
+        <field name="act_window_id" ref="action_addis_reason_admission"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="action_addis_reason_admission_tree">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_addis_reason_admission_tree"/>
+        <field name="act_window_id" ref="action_addis_reason_admission"/>
+    </record>
+
+
+</odoo>

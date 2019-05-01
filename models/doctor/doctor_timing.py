@@ -8,9 +8,9 @@ CURRENT_TIME = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 CURRENT_INDIA = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
 
 
-# Doctor Timings
-class DoctorTimings(models.Model):
-    _name = "doctor.timings"
+# Doctor Timing
+class DoctorTiming(models.Model):
+    _name = "doctor.timing"
 
     person_id = fields.Many2one(comodel_name="arc.person", string="Doctor")
     monday_fn_start = fields.Float()

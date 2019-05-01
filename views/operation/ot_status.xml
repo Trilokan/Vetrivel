@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="view_arc_operation_status_tree" model="ir.ui.view">
+        <field name="name">arc.operation.status.tree</field>
+        <field name="model">arc.operation</field>
+        <field name="arch" type="xml">
+            <tree string="OT Status">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_arc_operation_status_form" model="ir.ui.view">
+        <field name="name">arc.operation.status.form</field>
+        <field name="model">arc.operation</field>
+        <field name="arch" type="xml">
+            <form string="OT Status">
+                <sheet>
+                    <div id="s_header">
+                        <h1>OT Status</h1>
+                    </div>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_arc_operation_status_calendar" model="ir.ui.view">
+        <field name="name">arc.operation.calendar</field>
+        <field name="model">arc.operation</field>
+        <field name="arch" type="xml">
+            <calendar string="OT Status"
+                      color="name"
+                      date_start="date"
+                      mode="month"
+                      quick_add="False">
+                <field name="name"/>
+            </calendar>
+        </field>
+    </record>
+
+
+    <!-- Action -->
+    <record id="action_arc_operation_status" model="ir.actions.act_window">
+        <field name="name">OT Status</field>
+        <field name="res_model">arc.operation</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">calendar,tree,form</field>
+        <field name="view_id" ref="view_arc_operation_status_tree"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="action_arc_operation_status1_form">
+        <field eval="3" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_arc_operation_status_form" />
+        <field name="act_window_id" ref="action_arc_operation_status"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="action_arc_operation_status_tree">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_arc_operation_status_tree"/>
+        <field name="act_window_id" ref="action_arc_operation_status"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="action_arc_operation_status_calendar">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">calendar</field>
+        <field name="view_id" ref="view_arc_operation_status_calendar"/>
+        <field name="act_window_id" ref="action_arc_operation_status"/>
+    </record>
+
+</odoo>

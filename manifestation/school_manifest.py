@@ -207,11 +207,28 @@
         "views/invoice/sales_invoice.xml",
         "views/invoice/sales_return_invoice.xml",
 
-        # Register Payment
-        "views/register_payment/to_pay.xml",
-        # "views/register_payment/to_receive.xml",
+        # School
+        "views/school/year.xml",
+        "views/school/standard.xml",
+        "views/school/section.xml",
+        "views/school/subject.xml",
+        "views/school/complaint.xml",
+        "views/school/disciplinary_action.xml",
+        "views/school/co_curricular.xml",
+        "views/school/extra_curricular.xml",
+        "views/school/admission.xml",
+        "views/school/transfer.xml",
+        "views/school/student.xml",
+
+        # Academic
+        "views/academic/academic.xml",
+        "views/academic/standard.xml",
+        "views/academic/section.xml",
+        "views/academic/student.xml",
 
         # Menu
+        "views/menu/school.xml",
+        "views/menu/school_sub_menu.xml",
         "views/menu/hospital.xml",
         "views/menu/hospital_sub_menu.xml",
 
@@ -220,7 +237,7 @@
 
     ],
     "qweb": [
-        "static/src/xml/hings_view.xml",
+
     ],
     "installable": True,
     "auto_install": False,

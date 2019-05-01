@@ -7,7 +7,8 @@ class Syllabus(models.Model):
     _name = "arc.syllabus"
 
     academic_id = fields.Many2one(comodel_name="arc.academic", string="Academic")
-    department_id = fields.Many2one(comodel_name="arc.department", string="Department")
+    standard_id = fields.Many2one(comodel_name="arc.standard", string="Standard")
+    section_id = fields.Many2one(comodel_name="arc.section", string="Section")
     subject_id = fields.Many2one(comodel_name="school.subject", string="Subject")
     chapter_ids = fields.One2many(comodel_name="syllabus.detail", inverse_name="syllabus_id")
 

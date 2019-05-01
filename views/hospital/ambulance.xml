@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree -->
+    <record id="view_arc_ambulance_tree" model="ir.ui.view">
+        <field name="name">arc.ambulance.tree</field>
+        <field name="model">arc.ambulance</field>
+        <field name="arch" type="xml">
+            <tree string="Ambulance Service">
+                <field name="date"/>
+                <field name="patient_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_arc_ambulance_form" model="ir.ui.view">
+        <field name="name">arc.ambulance.form</field>
+        <field name="model">arc.ambulance</field>
+        <field name="arch" type="xml">
+            <form string="Ambulance Service">
+                <sheet>
+                    <div id="s_header">
+                        <h1>Ambulance Service</h1>
+                    </div>
+                    <group col="4">
+                        <field name="date"/>
+                        <field name="name"/>
+                        <field name="patient_id"/>
+                        <field name="driver_id"/>
+                        <field name="progress"/>
+                        <field name="payment"/>
+                        <field name="contact_person"/>
+                        <field name="contact_mobile"/>
+                        <field name="contact_phone"/>
+                        <field name="contact_address"/>
+                        <field name="landmark"/>
+                        <field name="travel_distance"/>
+                        <field name="amount_per_km"/>
+                        <field name="total_amount"/>
+                        <field name="is_diver_intimated"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_arc_ambulance" model="ir.actions.act_window">
+        <field name="name">Ambulance Service</field>
+        <field name="res_model">arc.ambulance</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">calendar,tree,form</field>
+    </record>
+
+</odoo>

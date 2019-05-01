@@ -8,6 +8,7 @@
             <link rel="stylesheet" href="/vetrivel/static/src/css/matrix.css"/>
             <link rel="stylesheet" href="/vetrivel/static/src/css/suchi.css"/>
             <link rel="stylesheet" href="/vetrivel/static/src/css/card_css.css"/>
+            <script type="text/javascript" src="/vetrivel/static/src/js/hings_view.js"></script>
         </xpath>
     </template>
 </odoo>

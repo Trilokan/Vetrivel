@@ -47,8 +47,6 @@
                             <field name="description"/>
                             <field name="credit"/>
                             <field name="debit"/>
-                            <field name="full_reconcile_id"/>
-                            <field name="part_reconcile_id"/>
                             <field name="journal_type_id" invisible="1"/>
                         </tree>
                     </field>

@@ -26,7 +26,7 @@
                     <group>
                         <field name="name"/>
                         <field name="theater_uid"/>
-                        <field name="in_charge_id"/>
+                        <field name="supervisor_id"/>
                     </group>
                 </sheet>
             </form>

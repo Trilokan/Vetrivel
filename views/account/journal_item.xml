@@ -16,8 +16,6 @@
                 <field name="description"/>
                 <field name="credit"/>
                 <field name="debit"/>
-                <field name="full_reconcile_id"/>
-                <field name="part_reconcile_id"/>
                 <field name="progress"/>
             </tree>
         </field>
@@ -46,8 +44,6 @@
                         <field name="description" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
                         <field name="credit" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
                         <field name="debit" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
-                        <field name="full_reconcile_id" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
-                        <field name="part_reconcile_id" attrs="{'readonly': [('progress', '!=', 'posted')]}"/>
                     </group>
                 </sheet>
             </form>
